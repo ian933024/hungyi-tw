@@ -1,0 +1,8 @@
+# Cloudflare Pages — 轉址規則
+# https://developers.cloudflare.com/pages/configuration/redirects/
+# 格式：來源 目的地 狀態碼
+
+# 常見的舊路徑／打錯字，之後有需要再往下加
+/cv            /cv.pdf              302
+/publication   /publications/       301
+/about         /#about              301

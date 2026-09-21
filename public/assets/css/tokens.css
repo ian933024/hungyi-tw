@@ -1,0 +1,137 @@
+/* ===========================================================
+   Ian 個人網頁 Design System — tokens
+   由 design system 的 tokens.json 產出，請勿手動微調個別數值；
+   要改顏色或尺度請改這個檔案的 token 定義，不要在 site.css 裡寫死值。
+   =========================================================== */
+
+:root,
+:root[data-theme="light"] {
+  /* 表面 */
+  --surface-page:    #faf8f4;
+  --surface-raised:  #ffffff;
+  --surface-sunken:  #f1ede6;
+  /* 文字三層 */
+  --ink:             #1c1a17;
+  --ink-muted:       #5c574f;
+  --ink-subtle:      #6f6a60;
+  /* 線 */
+  --line:            #ded8cd;
+  --line-strong:     #a9a196;
+  /* 強調 */
+  --accent:          #14615c;
+  --accent-hover:    #0e4a46;
+  --on-accent:       #faf8f4;
+  --accent-wash:     #e4eeed;
+  --highlight:       #a8562c;
+  --focus-ring:      #14615c;
+  /* 陰影 */
+  --shadow-none:     none;
+  --shadow-overlay:  0 8px 24px rgba(28, 26, 23, 0.10);
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --surface-page:    #151412;
+  --surface-raised:  #1e1c19;
+  --surface-sunken:  #100f0e;
+  --ink:             #f0ece4;
+  --ink-muted:       #a8a196;
+  --ink-subtle:      #8a8377;
+  --line:            #302d28;
+  --line-strong:     #585349;
+  --accent:          #6fbdb4;
+  --accent-hover:    #93d2ca;
+  --on-accent:       #10201f;
+  --accent-wash:     #1d2b2a;
+  --highlight:       #d98a5c;
+  --focus-ring:      #93d2ca;
+  --shadow-none:     none;
+  --shadow-overlay:  0 8px 24px rgba(0, 0, 0, 0.55);
+  color-scheme: dark;
+}
+
+/* 未手動指定主題時跟隨系統設定 */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --surface-page:    #151412;
+    --surface-raised:  #1e1c19;
+    --surface-sunken:  #100f0e;
+    --ink:             #f0ece4;
+    --ink-muted:       #a8a196;
+    --ink-subtle:      #8a8377;
+    --line:            #302d28;
+    --line-strong:     #585349;
+    --accent:          #6fbdb4;
+    --accent-hover:    #93d2ca;
+    --on-accent:       #10201f;
+    --accent-wash:     #1d2b2a;
+    --highlight:       #d98a5c;
+    --focus-ring:      #93d2ca;
+    --shadow-overlay:  0 8px 24px rgba(0, 0, 0, 0.55);
+    color-scheme: dark;
+  }
+}
+
+:root {
+  /* 字族 */
+  --font-serif: Newsreader, "Noto Serif TC", Georgia, serif;
+  --font-sans:  "IBM Plex Sans", "IBM Plex Sans TC", system-ui, sans-serif;
+  --font-mono:  "IBM Plex Mono", ui-monospace, monospace;
+
+  /* 間距（4px 基準格） */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  /* 圓角 */
+  --radius-none: 0;
+  --radius-sm:   3px;
+  --radius-md:   6px;
+  --radius-pill: 999px;
+
+  /* 版面 */
+  --measure-prose:  68ch;
+  --width-content:  720px;
+  --width-wide:     1080px;
+  --gutter-mobile:  20px;
+  --rule-weight:    1px;
+
+  /* 透明度 */
+  --opacity-disabled: 0.45;
+  --opacity-enter:    0;
+
+  /* 動態（design system 的動效規範） */
+  --dur-hover: 120ms;
+  --dur-enter: 320ms;
+  --ease-enter: cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* ---------- 文字樣式 class ---------- */
+.display-xl { font-family: var(--font-serif); font-size: 52px; line-height: 56px; font-weight: 400; letter-spacing: -0.02em; }
+.display-l  { font-family: var(--font-serif); font-size: 36px; line-height: 44px; font-weight: 400; letter-spacing: -0.015em; }
+
+.h1 { font-family: var(--font-serif); font-size: 28px; line-height: 36px; font-weight: 500; letter-spacing: -0.01em; }
+.h2 { font-family: var(--font-serif); font-size: 21px; line-height: 30px; font-weight: 500; }
+.h3 { font-family: var(--font-sans);  font-size: 17px; line-height: 26px; font-weight: 600; }
+
+.lead    { font-family: var(--font-serif); font-size: 19px; line-height: 32px; font-weight: 400; }
+.body    { font-family: var(--font-sans);  font-size: 16px; line-height: 28px; font-weight: 400; }
+.body-sm { font-family: var(--font-sans);  font-size: 14px; line-height: 23px; font-weight: 400; }
+.caption { font-family: var(--font-sans);  font-size: 13px; line-height: 20px; font-weight: 400; }
+
+.label   { font-family: var(--font-sans); font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; }
+.mono-sm { font-family: var(--font-mono); font-size: 13px; line-height: 22px; font-weight: 400; }
+
+/* 行動版縮一階，避免 52px 標題撐破畫面 */
+@media (max-width: 640px) {
+  .display-xl { font-size: 38px; line-height: 42px; }
+  .display-l  { font-size: 28px; line-height: 36px; }
+  .h1         { font-size: 23px; line-height: 32px; }
+}

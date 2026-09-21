@@ -1,0 +1,21 @@
+# Cloudflare Pages 專案設定
+# 現在只需要這三行；之後要加 KV／D1／環境變數時都寫在這個檔案裡，
+# 本機 `wrangler pages dev` 與線上部署就會使用同一份設定。
+
+name = "hungyi-tw"
+pages_build_output_dir = "public"
+compatibility_date = "2026-09-21"
+
+# ---- 以下為之後可能會用到的綁定，先註解起來 ----
+
+# [[kv_namespaces]]
+# binding = "COUNTERS"
+# id = "……"
+
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "hungyi-tw"
+# database_id = "……"
+
+# [vars]
+# CONTACT_TO = "……"

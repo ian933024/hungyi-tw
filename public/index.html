@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ian — 認知神經科學與教育科技</title>
+  <meta name="description" content="我研究大腦如何處理語言。可攜式腦波儀、N400、以及能真的放進教室的英語能力評估工具。">
+  <link rel="canonical" href="https://hungyi-tw.net/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ian — 認知神經科學與教育科技">
+  <meta property="og:description" content="我研究大腦如何處理語言。可攜式腦波儀、N400、以及能真的放進教室的英語能力評估工具。">
+  <meta property="og:url" content="https://hungyi-tw.net/">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="theme-color" content="#faf8f4" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#151412" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&amp;family=Noto+Serif+TC:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Sans+TC:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400&amp;display=swap">
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script>
+    /* 在畫面繪製前套用主題，避免切換時閃一下白底 */
+    (function () {
+      var r = document.documentElement;
+      r.classList.remove('no-js');
+      try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') r.setAttribute('data-theme', t); } catch (e) {}
+      /* 保險：site.js 若載入失敗，2 秒後仍把所有內容顯示出來 */
+      setTimeout(function () { r.classList.add('reveal-fallback'); }, 2000);
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link body-sm" href="#main">跳到主要內容</a>
+  <header class="site-header">
+    <div class="wrap wrap--wide">
+      <div class="site-header__bar">
+        <a class="site-header__mark" href="/">Ian</a>
+        <nav class="site-nav label" aria-label="主要導覽">
+        <a href="/research/">RESEARCH</a>
+        <a href="/publications/">PUBLICATIONS</a>
+        <a href="/teaching/">TEACHING</a>
+        <a href="/dev/">DEV</a>
+        </nav>
+        <div class="site-header__aside label">
+        <a href="https://orcid.org/0000-0000-0000-0000" rel="me noopener" target="_blank">ORCID</a>
+        <a href="https://scholar.google.com/" rel="me noopener" target="_blank">SCHOLAR</a>
+        <a href="https://github.com/" rel="me noopener" target="_blank">GITHUB</a>
+          <button class="theme-toggle" type="button" data-theme-toggle>DARK</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+      <!-- TODO: 把 Hero 的姓名換成你希望對外顯示的名字（中文全名或 Ian） -->
+    <div class="wrap wrap--wide hero">
+      <h1 class="hero__name display-xl">Ian</h1>
+      <p class="hero__lead lead">我研究大腦如何處理語言。目前用可攜式腦波儀量測 N400，試著把它變成真的能放進教室的英語能力評估工具。</p>
+      <p class="hero__meta caption">
+        <span class="hero__dot" aria-hidden="true"></span>
+        <span>碩士生 · <a href="https://www.nycu.edu.tw/" target="_blank" rel="noopener">陽明交通大學 腦科技跨領域工程學程</a> · 新竹</span>
+      </p>
+      <p class="hero__actions">
+        <a class="btn btn--primary" href="/cv.pdf">下載 CV</a>
+        <a class="btn btn--secondary" href="mailto:ian@example.edu">寄信給我</a>
+      </p>
+    </div>
+
+    <section class="section wrap wrap--wide reveal">
+      <p class="section__kicker label">SELECTED WORK</p>
+      <div class="section__row">
+        <h2 class="section__title h1">近期研究</h2>
+        <a class="section__more body-sm" href="/research/">全部研究 →</a>
+      </div>
+      <div class="section__body">
+        <div class="card-grid">
+        <article class="card">
+          <div class="card__top">
+            <h3 class="card__title h2"><a href="/research/">EEG 雜訊處理管線</a></h3>
+            <span class="tag tag--accent">進行中</span>
+          </div>
+          <p class="card__desc body-sm">為低通道可攜式裝置設計的自動去偽跡流程，把眼動與肌電從單次試驗中剝離，讓 N400 在教室環境也量得到。</p>
+          <p class="card__stats mono-sm"><span>MATLAB / EEGLAB</span><span>32 ch</span><span>2025–</span></p>
+        </article>
+        <article class="card">
+          <div class="card__top">
+            <h3 class="card__title h2"><a href="/research/">N400 英語能力評估</a></h3>
+            <span class="tag tag--accent">進行中</span>
+          </div>
+          <p class="card__desc body-sm">用語義違例句作業誘發 N400，測試它與傳統紙筆英語測驗的相關性，目標是一個 15 分鐘的課堂版本。</p>
+          <p class="card__stats mono-sm"><span>ERP</span><span>EFL</span><span>2024–</span></p>
+        </article>
+        </div>
+      </div>
+    </section>
+    <section class="section wrap wrap--wide reveal">
+      <p class="section__kicker label">PUBLICATIONS</p>
+      <div class="section__row">
+        <h2 class="section__title h1">精選論文</h2>
+        <a class="section__more body-sm" href="/publications/">全部論文 →</a>
+      </div>
+      <div class="section__body">
+      <!-- TODO: 以下三筆為佔位資料，請換成真實的題目、作者列、期刊與連結；沒有 DOI 就把該連結整個拿掉 -->
+        <ol class="pub-list">
+          <li class="pub-list__item">
+            <span class="pub-list__year mono-sm">2026</span>
+            <div>
+              <a class="pub-list__title h3" href="#">Portable EEG N400 as a proxy measure of lexical proficiency in EFL learners</a>
+              <p class="pub-list__authors body-sm"><strong>Ian Chen</strong>, C.-H. Lin, &amp; J.-X. Zhuang</p>
+              <p class="pub-list__venue caption"><em>Journal of Neurolinguistics</em><span>·</span><a href="#">DOI</a><span>·</span><a href="#">PDF</a></p>
+            </div>
+          </li>
+          <li class="pub-list__item">
+            <span class="pub-list__year mono-sm">2025</span>
+            <div>
+              <a class="pub-list__title h3" href="#">運動員反應抑制作業中的 P300 振幅差異：一個跨項目的比較</a>
+              <p class="pub-list__authors body-sm"><strong>Ian Chen</strong> &amp; Y.-T. Hsu</p>
+              <p class="pub-list__venue caption"><em>中華心理學刊</em><span>·</span><a href="#">PDF</a></p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+    <section class="section wrap wrap--wide reveal">
+      <p class="section__kicker label">BUILDS</p>
+      <div class="section__row">
+        <h2 class="section__title h1">開發</h2>
+        <a class="section__more body-sm" href="/dev/">全部專案 →</a>
+      </div>
+      <div class="section__body">
+        <div class="card-grid">
+        <article class="card">
+          <div class="card__top">
+            <h3 class="card__title h2"><a href="/dev/">ERP Viewer</a></h3>
+            <span class="tag tag--accent">維護中</span>
+          </div>
+          <p class="card__desc body-sm">瀏覽器裡直接開 .set 檔看波形的小工具，不用開 MATLAB 就能快速確認一筆資料有沒有壞掉。</p>
+          <p class="card__stats mono-sm"><span>JavaScript</span><span>WebGL</span><span>2025–</span></p>
+        </article>
+        <article class="card">
+          <div class="card__top">
+            <h3 class="card__title h2"><a href="/dev/">營隊報名系統</a></h3>
+            
+          </div>
+          <p class="card__desc body-sm">為腦科學營隊寫的報名與分組工具，取代了原本每年重做一次的 Google 表單流程。</p>
+          <p class="card__stats mono-sm"><span>Cloudflare</span><span>D1</span><span>2024</span></p>
+        </article>
+        </div>
+      </div>
+    </section>
+    <section class="section wrap wrap--wide reveal">
+      <p class="section__kicker label">ABOUT</p>
+      <div class="section__row">
+        <h2 class="section__title h1">關於</h2>
+      </div>
+      <div class="section__body">
+      <!-- TODO: 這兩段請用你自己的話重寫，這是整個網站最需要「像你」的地方 -->
+        <div class="prose body">
+          <p>我在清華大學念教育與學習科技，現在在陽明交通大學的腦科技跨領域工程學程讀碩士。兩個背景加起來的結果是：我對「學習發生的時候大腦在做什麼」這件事有興趣，但更在意這些知識能不能變成教室裡真的用得上的東西。</p>
+          <p>大學時做過國科會大專生研究計畫，也在語言與腦科學的實驗室待過。教學方面，我設計過六梯國小腦科學營隊，總共帶過一百多個學生自己接電極、看見自己的腦波。做研究和做課程對我來說是同一件事的兩面。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap wrap--wide site-footer__inner">
+      <div class="site-footer__cols">
+        <div>
+          <p class="site-footer__label label">CONTACT</p>
+          <a class="site-footer__mail" href="mailto:ian@example.edu">ian [at] example.edu</a>
+        </div>
+        <nav class="site-footer__links label" aria-label="外部連結">
+          <a href="https://orcid.org/0000-0000-0000-0000" rel="me noopener" target="_blank">ORCID</a>
+          <a href="https://scholar.google.com/" rel="me noopener" target="_blank">SCHOLAR</a>
+          <a href="https://github.com/" rel="me noopener" target="_blank">GITHUB</a>
+        </nav>
+      </div>
+      <div class="site-footer__bottom caption">
+        <span>新竹 · 台灣</span>
+        <span class="mono-sm">最後更新 2026.09.21</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/site.js" defer></script>
+</body>
+</html>

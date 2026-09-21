@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>筆記 — Ian</title>
+  <meta name="description" content="研究與教學過程中的筆記。">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://hungyi-tw.net/notes/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="筆記 — Ian">
+  <meta property="og:description" content="研究與教學過程中的筆記。">
+  <meta property="og:url" content="https://hungyi-tw.net/notes/">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="theme-color" content="#faf8f4" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#151412" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&amp;family=Noto+Serif+TC:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Sans+TC:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400&amp;display=swap">
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script>
+    /* 在畫面繪製前套用主題，避免切換時閃一下白底 */
+    (function () {
+      var r = document.documentElement;
+      r.classList.remove('no-js');
+      try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') r.setAttribute('data-theme', t); } catch (e) {}
+      /* 保險：site.js 若載入失敗，2 秒後仍把所有內容顯示出來 */
+      setTimeout(function () { r.classList.add('reveal-fallback'); }, 2000);
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link body-sm" href="#main">跳到主要內容</a>
+  <header class="site-header">
+    <div class="wrap wrap--wide">
+      <div class="site-header__bar">
+        <a class="site-header__mark" href="/">Ian</a>
+        <nav class="site-nav label" aria-label="主要導覽">
+        <a href="/research/">RESEARCH</a>
+        <a href="/publications/">PUBLICATIONS</a>
+        <a href="/teaching/">TEACHING</a>
+        <a href="/dev/">DEV</a>
+        </nav>
+        <div class="site-header__aside label">
+        <a href="https://orcid.org/0000-0000-0000-0000" rel="me noopener" target="_blank">ORCID</a>
+        <a href="https://scholar.google.com/" rel="me noopener" target="_blank">SCHOLAR</a>
+        <a href="https://github.com/" rel="me noopener" target="_blank">GITHUB</a>
+          <button class="theme-toggle" type="button" data-theme-toggle>DARK</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap wrap--wide page-head">
+      <p class="page-head__kicker label">NOTES</p>
+      <h1 class="page-head__title display-l">筆記</h1>
+      <p class="page-head__intro body">這一頁還沒開放。結構與樣式都已經備好，要開始寫的時候把下面註解掉的列表打開、並在 header 的導覽列加上一行即可。</p>
+    </div>
+    <section class="section wrap wrap--wide reveal">
+      <div class="section__body">
+        <div class="prose body">
+          <p>目前沒有公開的文章。</p>
+        </div>
+
+        <!-- 開站步驟：
+             1. 把 build 時的 NAV 陣列（或各頁 header 區塊）加入 ("/notes/", "NOTES", "notes")
+             2. 移除本頁 head 裡的 noindex
+             3. 把下面的列表取消註解，每篇文章建立 /notes/<slug>/index.html
+             4. sitemap.xml 加上新頁面
+        -->
+        <!--
+        <ul class="note-list">
+          <li class="note-list__item"><a href="/notes/grand-average/">
+            <span class="note-list__head">
+              <span class="note-list__date mono-sm">2026.08</span>
+              <span class="note-list__title h3">為什麼我不再相信 grand average</span>
+            </span>
+            <p class="note-list__excerpt body-sm">平均化讓 ERP 好看，但也把個別差異抹掉了。記一次重新分析舊資料的過程。</p>
+          </a></li>
+        </ul>
+        -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap wrap--wide site-footer__inner">
+      <div class="site-footer__cols">
+        <div>
+          <p class="site-footer__label label">CONTACT</p>
+          <a class="site-footer__mail" href="mailto:ian@example.edu">ian [at] example.edu</a>
+        </div>
+        <nav class="site-footer__links label" aria-label="外部連結">
+          <a href="https://orcid.org/0000-0000-0000-0000" rel="me noopener" target="_blank">ORCID</a>
+          <a href="https://scholar.google.com/" rel="me noopener" target="_blank">SCHOLAR</a>
+          <a href="https://github.com/" rel="me noopener" target="_blank">GITHUB</a>
+        </nav>
+      </div>
+      <div class="site-footer__bottom caption">
+        <span>新竹 · 台灣</span>
+        <span class="mono-sm">最後更新 2026.09.21</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/site.js" defer></script>
+</body>
+</html>

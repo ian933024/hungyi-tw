@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>研究 — Ian</title>
+  <meta name="description" content="EEG／ERP 方法學、N400 與語言處理、可攜式腦波裝置的訊號品質。">
+  <link rel="canonical" href="https://hungyi-tw.net/research/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="研究 — Ian">
+  <meta property="og:description" content="EEG／ERP 方法學、N400 與語言處理、可攜式腦波裝置的訊號品質。">
+  <meta property="og:url" content="https://hungyi-tw.net/research/">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="theme-color" content="#faf8f4" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#151412" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&amp;family=Noto+Serif+TC:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Sans+TC:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400&amp;display=swap">
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script>
+    /* 在畫面繪製前套用主題，避免切換時閃一下白底 */
+    (function () {
+      var r = document.documentElement;
+      r.classList.remove('no-js');
+      try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') r.setAttribute('data-theme', t); } catch (e) {}
+      /* 保險：site.js 若載入失敗，2 秒後仍把所有內容顯示出來 */
+      setTimeout(function () { r.classList.add('reveal-fallback'); }, 2000);
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link body-sm" href="#main">跳到主要內容</a>
+  <header class="site-header">
+    <div class="wrap wrap--wide">
+      <div class="site-header__bar">
+        <a class="site-header__mark" href="/">Ian</a>
+        <nav class="site-nav label" aria-label="主要導覽">
+        <a href="/research/" aria-current="page">RESEARCH</a>
+        <a href="/publications/">PUBLICATIONS</a>
+        <a href="/teaching/">TEACHING</a>
+        <a href="/dev/">DEV</a>
+        </nav>
+        <div class="site-header__aside label">
+        <a href="https://orcid.org/0000-0000-0000-0000" rel="me noopener" target="_blank">ORCID</a>
+        <a href="https://scholar.google.com/" rel="me noopener" target="_blank">SCHOLAR</a>
+        <a href="https://github.com/" rel="me noopener" target="_blank">GITHUB</a>
+          <button class="theme-toggle" type="button" data-theme-toggle>DARK</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap wrap--wide page-head">
+      <p class="page-head__kicker label">RESEARCH</p>
+      <h1 class="page-head__title display-l">研究</h1>
+      <p class="page-head__intro body">我的研究問題是：腦波能不能取代一部分傳統的語言能力測驗？要回答它，得同時處理訊號品質與教育現場的可行性兩件事。</p>
+    </div>
+    <section class="section wrap wrap--wide reveal">
+      <p class="section__kicker label">TOPICS</p>
+      <div class="section__row">
+        <h2 class="section__title h1">研究主題</h2>
+      </div>
+      <div class="section__body">
+      <!-- TODO: 研究興趣請換成你自己的描述，標籤也一併調整 -->
+        <div class="prose body">
+          <p>我關心語義處理的電生理指標——特別是 N400——在個別差異上的解釋力。傳統上 ERP 研究靠 grand average 得到漂亮的波形，但教育應用需要的恰恰是被平均掉的那部分：這一個學生的反應。</p>
+          <p>另一條線是訊號本身。可攜式裝置的通道少、阻抗高、環境噪音大，若要在教室量測，去偽跡流程必須是自動且保守的。這部分的工作比較像工程，但它決定了前一條線做不做得成。</p>
+        </div>
+        <p class="tag-row" style="margin-top: var(--space-6)">
+          <span class="tag">ERP</span><span class="tag">N400</span><span class="tag">EEG 訊號處理</span><span class="tag">EFL 評量</span><span class="tag">個別差異</span>
+        </p>
+      </div>
+    </section>
+    <section class="section wrap wrap--wide reveal">
+      <p class="section__kicker label">PROJECTS</p>
+      <div class="section__row">
+        <h2 class="section__title h1">專案</h2>
+      </div>
+      <div class="section__body">
+      <!-- TODO: 四張卡片的內容、狀態與底部資訊請依實際情況調整；不足四個就刪掉多的 -->
+        <div class="card-grid">
+        <article class="card">
+          <div class="card__top">
+            <h3 class="card__title h2"><a href="#">EEG 雜訊處理管線</a></h3>
+            <span class="tag tag--accent">進行中</span>
+          </div>
+          <p class="card__desc body-sm">為低通道可攜式裝置設計的自動去偽跡流程，把眼動與肌電從單次試驗中剝離，讓 N400 在教室環境也量得到。</p>
+          <p class="card__stats mono-sm"><span>MATLAB / EEGLAB</span><span>32 ch</span><span>2025–</span></p>
+        </article>
+        <article class="card">
+          <div class="card__top">
+            <h3 class="card__title h2"><a href="#">N400 英語能力評估</a></h3>
+            <span class="tag tag--accent">進行中</span>
+          </div>
+          <p class="card__desc body-sm">用語義違例句作業誘發 N400，測試它與傳統紙筆英語測驗的相關性，目標是一個 15 分鐘的課堂版本。</p>
+          <p class="card__stats mono-sm"><span>ERP</span><span>EFL</span><span>2024–</span></p>
+        </article>
+        <article class="card">
+          <div class="card__top">
+            <h3 class="card__title h2"><a href="#">運動員 ERP 比較研究</a></h3>
+            <span class="tag tag--accent">投稿中</span>
+          </div>
+          <p class="card__desc body-sm">比較不同運動項目選手在反應抑制作業中的 P300 振幅，檢驗專項訓練是否反映在注意力資源分配上。</p>
+          <p class="card__stats mono-sm"><span>P300</span><span>n = 60</span><span>2025</span></p>
+        </article>
+        <article class="card">
+          <div class="card__top">
+            <h3 class="card__title h2"><a href="#">單次試驗分類</a></h3>
+            
+          </div>
+          <p class="card__desc body-sm">用機器學習從單次試驗判斷受試者是否偵測到語義違例，測試 ERP 特徵在個人層級的可分性。</p>
+          <p class="card__stats mono-sm"><span>Python</span><span>分類</span><span>2024</span></p>
+        </article>
+        </div>
+      </div>
+    </section>
+    <section class="section wrap wrap--wide reveal">
+      <p class="section__kicker label">METHODS</p>
+      <div class="section__row">
+        <h2 class="section__title h1">方法與工具</h2>
+      </div>
+      <div class="section__body">
+        <div class="prose body">
+          <p>資料前處理以 EEGLAB 與 ERPLAB 為主，分析與視覺化在 MATLAB 與 Python 之間來回。統計上偏好把個別差異當成訊號而非雜訊，所以混合效應模型用得比重複量數變異數分析多。</p>
+          <p>所有分析腳本都盡量寫成可重跑的形式。已發表研究的資料與程式碼，只要倫理審查允許，都會放上來。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap wrap--wide site-footer__inner">
+      <div class="site-footer__cols">
+        <div>
+          <p class="site-footer__label label">CONTACT</p>
+          <a class="site-footer__mail" href="mailto:ian@example.edu">ian [at] example.edu</a>
+        </div>
+        <nav class="site-footer__links label" aria-label="外部連結">
+          <a href="https://orcid.org/0000-0000-0000-0000" rel="me noopener" target="_blank">ORCID</a>
+          <a href="https://scholar.google.com/" rel="me noopener" target="_blank">SCHOLAR</a>
+          <a href="https://github.com/" rel="me noopener" target="_blank">GITHUB</a>
+        </nav>
+      </div>
+      <div class="site-footer__bottom caption">
+        <span>新竹 · 台灣</span>
+        <span class="mono-sm">最後更新 2026.09.21</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/site.js" defer></script>
+</body>
+</html>

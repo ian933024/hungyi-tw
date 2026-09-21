@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /notes/
+
+Sitemap: https://hungyi-tw.net/sitemap.xml
