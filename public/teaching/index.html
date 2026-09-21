@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html lang="zh-Hant-TW" class="no-js">
+<html lang="zh-Hant-TW" data-lang="zh" class="no-js"
+      data-title-zh="教學 — 余竑毅" data-title-en="Teaching — Hung-Yi Yu"
+      data-desc-zh="課輔、家教、營隊與海外教育見習經驗。" data-desc-en="Tutoring, camps, and education practicum experience in Taiwan and Japan.">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>教學 — Ian</title>
-  <meta name="description" content="國小腦科學營隊、課程設計與助教經驗。">
+  <title>教學 — 余竑毅</title>
+  <meta name="description" content="課輔、家教、營隊與海外教育見習經驗。">
   <link rel="canonical" href="https://hungyi-tw.net/teaching/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="教學 — Ian">
-  <meta property="og:description" content="國小腦科學營隊、課程設計與助教經驗。">
+  <meta property="og:title" content="教學 — 余竑毅">
+  <meta property="og:description" content="課輔、家教、營隊與海外教育見習經驗。">
   <meta property="og:url" content="https://hungyi-tw.net/teaching/">
   <meta property="og:locale" content="zh_TW">
+  <meta property="og:locale:alternate" content="en_US">
   <meta name="theme-color" content="#faf8f4" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151412" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -20,32 +23,37 @@
   <link rel="stylesheet" href="/assets/css/tokens.css">
   <link rel="stylesheet" href="/assets/css/site.css">
   <script>
-    /* 在畫面繪製前套用主題，避免切換時閃一下白底 */
+    /* 在畫面繪製前套用語言與主題，避免切換時閃一下 */
     (function () {
       var r = document.documentElement;
       r.classList.remove('no-js');
-      try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') r.setAttribute('data-theme', t); } catch (e) {}
-      /* 保險：site.js 若載入失敗，2 秒後仍把所有內容顯示出來 */
+      try {
+        var l = localStorage.getItem('lang');
+        if (l !== 'zh' && l !== 'en') l = /^zh/i.test(navigator.language || '') ? 'zh' : 'en';
+        r.setAttribute('data-lang', l);
+        r.setAttribute('lang', l === 'en' ? 'en' : 'zh-Hant-TW');
+        var t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') r.setAttribute('data-theme', t);
+      } catch (e) {}
       setTimeout(function () { r.classList.add('reveal-fallback'); }, 2000);
     })();
   </script>
 </head>
 <body>
-  <a class="skip-link body-sm" href="#main">跳到主要內容</a>
+  <a class="skip-link body-sm" href="#main"><span class="i18n-zh">跳到主要內容</span><span class="i18n-en">Skip to content</span></a>
   <header class="site-header">
     <div class="wrap wrap--wide">
       <div class="site-header__bar">
-        <a class="site-header__mark" href="/">Ian</a>
-        <nav class="site-nav label" aria-label="主要導覽">
-        <a href="/research/">RESEARCH</a>
-        <a href="/publications/">PUBLICATIONS</a>
-        <a href="/teaching/" aria-current="page">TEACHING</a>
-        <a href="/dev/">DEV</a>
+        <a class="site-header__mark" href="/"><span class="i18n-zh">余竑毅</span><span class="i18n-en">Hung-Yi Yu</span></a>
+        <nav class="site-nav label" aria-label="Main">
+          <a href="/research/">RESEARCH</a>
+          <a href="/publications/">PUBLICATIONS</a>
+          <a href="/teaching/" aria-current="page">TEACHING</a>
+          <a href="/dev/">DEV</a>
         </nav>
         <div class="site-header__aside label">
-        <a href="https://orcid.org/0000-0000-0000-0000" rel="me noopener" target="_blank">ORCID</a>
-        <a href="https://scholar.google.com/" rel="me noopener" target="_blank">SCHOLAR</a>
-        <a href="https://github.com/" rel="me noopener" target="_blank">GITHUB</a>
+          <a href="https://github.com/ian933024" rel="me noopener" target="_blank">GITHUB</a>
+          <button class="lang-toggle" type="button" data-lang-toggle data-lang-label="en">EN</button>
           <button class="theme-toggle" type="button" data-theme-toggle>DARK</button>
         </div>
       </div>
@@ -55,66 +63,78 @@
   <main id="main">
     <div class="wrap wrap--wide page-head">
       <p class="page-head__kicker label">TEACHING</p>
-      <h1 class="page-head__title display-l">教學</h1>
-      <p class="page-head__intro body">我設計課程的方式和做研究一樣：先問學生會在哪裡卡住，再決定要教什麼。動手做永遠排在講解前面。</p>
+      <h1 class="page-head__title display-l i18n-zh">教學</h1><h1 class="page-head__title display-l i18n-en">Teaching</h1>
+      <p class="page-head__intro body i18n-zh">我的教學經驗大多不在標準的課堂裡：資源班、住宿生課輔、一對一家教。這些場景的共同點是進度表沒有用，得先知道學生卡在哪一步。</p><p class="page-head__intro body i18n-en">Most of my teaching has happened outside standard classrooms: resource rooms, dormitory tutoring, one-on-one sessions. What they have in common is that a syllabus does not help; you first have to find the exact step where the student is stuck.</p>
     </div>
     <section class="section wrap wrap--wide reveal">
-      <p class="section__kicker label">PROGRAMS</p>
+      <p class="section__kicker label">TUTORING</p>
       <div class="section__row">
-        <h2 class="section__title h1">課程設計與營隊</h2>
+        <h2 class="section__title h1 i18n-zh">教學與課輔</h2><h2 class="section__title h1 i18n-en">Tutoring</h2>
       </div>
       <div class="section__body">
-      <!-- TODO: 梯次、時間、人數與課程名稱請換成真實資料 -->
         <ul class="entry-list">
           <li class="entry-list__item">
-            <span class="entry-list__when mono-sm">2022–2025</span>
+            <span class="entry-list__when mono-sm">2023.09–2026.06</span>
             <div>
-              <h3 class="entry-list__title h3">國小腦科學營隊</h3>
-              <p class="entry-list__where caption">新竹市／共六梯，142 人次</p>
-              <p class="entry-list__desc body-sm">五天的動手做課程，四到六年級。學生自己接電極、看見自己的腦波，最後分組設計一個小實驗並報告。教案與學習單皆自製。</p>
+              <h3 class="entry-list__title h3"><span class="i18n-zh">家教 · 國中全科</span><span class="i18n-en">Private Tutor · Junior High, All Subjects</span></h3>
+              <p class="entry-list__where caption"><span class="i18n-zh">一對一</span><span class="i18n-en">One-on-one</span></p>
+              <p class="entry-list__desc body-sm"><span class="i18n-zh">為一位有特殊學習需求的國中生進行三年的全科教學，會考成績從 4C 提升至 2B2C（英文除外）。</span><span class="i18n-en">Three years of all-subject tutoring for a junior-high student with specific learning needs; entrance-exam results improved from 4C to 2B2C (excluding English).</span></p>
             </div>
           </li>
           <li class="entry-list__item">
-            <span class="entry-list__when mono-sm">2023</span>
+            <span class="entry-list__when mono-sm">2025.03–2026.02</span>
             <div>
-              <h3 class="entry-list__title h3">「大腦與學習」教師工作坊</h3>
-              <p class="entry-list__where caption">國小教師研習，單場 6 小時</p>
-              <p class="entry-list__desc body-sm">把學習科學的研究結果翻譯成教室裡能用的具體做法，重點放在間隔複習與提取練習。</p>
+              <h3 class="entry-list__title h3"><span class="i18n-zh">家教 · 國小作文</span><span class="i18n-en">Private Tutor · Elementary Writing</span></h3>
+              <p class="entry-list__where caption"><span class="i18n-zh">三位高年級學生</span><span class="i18n-en">Three upper-grade students</span></p>
+              <p class="entry-list__desc body-sm"><span class="i18n-zh">為三位國小高年級學生設計並帶領作文課程，持續一年。</span><span class="i18n-en">Designed and taught a year-long writing course for three upper-grade elementary students.</span></p>
             </div>
           </li>
           <li class="entry-list__item">
-            <span class="entry-list__when mono-sm">2021–2022</span>
+            <span class="entry-list__when mono-sm">2025.02–2025.06</span>
             <div>
-              <h3 class="entry-list__title h3">科學探究社團</h3>
-              <p class="entry-list__where caption">課後社團，每週兩小時</p>
-              <p class="entry-list__desc body-sm">以問題導向的方式帶學生跑完一個完整的探究循環，從提問到做出可展示的成果。</p>
+              <h3 class="entry-list__title h3"><span class="i18n-zh">住宿生課輔教師</span><span class="i18n-en">Dormitory Tutor</span></h3>
+              <p class="entry-list__where caption"><span class="i18n-zh">新竹縣尖石國中</span><span class="i18n-en">Jianshi Junior High School, Hsinchu County</span></p>
+            </div>
+          </li>
+          <li class="entry-list__item">
+            <span class="entry-list__when mono-sm">2022.09–2024.06</span>
+            <div>
+              <h3 class="entry-list__title h3"><span class="i18n-zh">資源班課輔教師</span><span class="i18n-en">Resource Room Tutor</span></h3>
+              <p class="entry-list__where caption"><span class="i18n-zh">新竹市東園國小</span><span class="i18n-en">Dongyuan Elementary School, Hsinchu City</span></p>
             </div>
           </li>
         </ul>
       </div>
     </section>
     <section class="section wrap wrap--wide reveal">
-      <p class="section__kicker label">ASSISTANTSHIP</p>
+      <p class="section__kicker label">OUTREACH</p>
       <div class="section__row">
-        <h2 class="section__title h1">助教經驗</h2>
+        <h2 class="section__title h1 i18n-zh">教育服務與海外見習</h2><h2 class="section__title h1 i18n-en">Outreach and Practicum</h2>
       </div>
       <div class="section__body">
-      <!-- TODO: 課名、學期與系所請換成真實資料 -->
         <ul class="entry-list">
           <li class="entry-list__item">
-            <span class="entry-list__when mono-sm">2025 秋</span>
+            <span class="entry-list__when mono-sm">2023–2024</span>
             <div>
-              <h3 class="entry-list__title h3">生醫訊號處理</h3>
-              <p class="entry-list__where caption">陽明交通大學 電機學院</p>
-              <p class="entry-list__desc body-sm">負責 MATLAB 實作課的設計與批改，把每週作業改成可自動驗證的形式，讓回饋在 24 小時內回到學生手上。</p>
+              <h3 class="entry-list__title h3"><span class="i18n-zh">教育服務團 幹部</span><span class="i18n-en">Education Service Corps, Officer</span></h3>
+              <p class="entry-list__where caption"><span class="i18n-zh">國立清華大學 · 社團</span><span class="i18n-en">National Tsing Hua University · Student organisation</span></p>
+              <p class="entry-list__desc body-sm"><span class="i18n-zh">舉辦及參加超過二十場營隊，負責課程設計與現場執行。</span><span class="i18n-en">Organised and joined more than twenty camps, responsible for curriculum design and on-site delivery.</span></p>
             </div>
           </li>
           <li class="entry-list__item">
-            <span class="entry-list__when mono-sm">2023 春</span>
+            <span class="entry-list__when mono-sm">2025.06</span>
             <div>
-              <h3 class="entry-list__title h3">學習科技導論</h3>
-              <p class="entry-list__where caption">清華大學 教育與學習科技學系</p>
-              <p class="entry-list__desc body-sm">帶討論課與期末專案指導。</p>
+              <h3 class="entry-list__title h3"><span class="i18n-zh">日本大阪中華學校教育見習</span><span class="i18n-en">Education Practicum, Osaka Chinese School</span></h3>
+              <p class="entry-list__where caption"><span class="i18n-zh">國立清華大學師資培育中心 · 總召</span><span class="i18n-en">NTHU Center for Teacher Education · Coordinator</span></p>
+              <p class="entry-list__desc body-sm"><span class="i18n-zh">為期兩週的見習，規劃四堂以上入班文化交流課程，並在團隊中擔任總召，統籌公共事務。</span><span class="i18n-en">A two-week practicum. I designed more than four in-class cultural exchange lessons and served as team coordinator.</span></p>
+            </div>
+          </li>
+          <li class="entry-list__item">
+            <span class="entry-list__when mono-sm">2024.06</span>
+            <div>
+              <h3 class="entry-list__title h3"><span class="i18n-zh">光罩日本教育見習計劃</span><span class="i18n-en">Japan Education Practicum Program</span></h3>
+              <p class="entry-list__where caption"><span class="i18n-zh">國立清華大學／光照基金會 · 見習成員</span><span class="i18n-en">NTHU / Photomask Foundation · Participant</span></p>
+              <p class="entry-list__desc body-sm"><span class="i18n-zh">前往日本愛媛，參訪當地幼兒園、國小、國中及高中，於幼兒園與國中進行試教，並以教師訪談進行跨國教育行動研究。</span><span class="i18n-en">Visited kindergartens through high schools in Ehime, Japan; taught trial lessons at a kindergarten and a junior high, and conducted cross-national action research through teacher interviews.</span></p>
             </div>
           </li>
         </ul>
@@ -123,13 +143,11 @@
     <section class="section wrap wrap--wide reveal">
       <p class="section__kicker label">APPROACH</p>
       <div class="section__row">
-        <h2 class="section__title h1">教學理念</h2>
+        <h2 class="section__title h1 i18n-zh">教學理念</h2><h2 class="section__title h1 i18n-en">Approach</h2>
       </div>
       <div class="section__body">
-        <div class="prose body">
-          <p>我相信先動手再講理論。腦科學營隊的第一堂課不是投影片，是讓學生把電極貼到自己頭上——當他們在螢幕上看見自己眨眼造成的那道尖波時，後面要講的所有東西都有了依附的對象。</p>
-          <p>另一個原則是短回饋。一個單元的長度盡量控制在學生還記得起點的範圍內，讓每一次練習都能立刻看到結果。這對我自己也一樣有效。</p>
-        </div>
+        <div class="prose body i18n-zh"><p>先動手，再講理論。課輔和家教教會我的是：學生說「我不懂」的時候，通常不知道自己是在哪一步不懂——找到那一步比重講一次有用得多。</p><p>這也是我後來對腦波感興趣的原因。如果能在學生說得出口之前，就看見理解有沒有發生，教學的回饋迴路會短很多。</p></div>
+        <div class="prose body i18n-en"><p>Hands first, theory second. What tutoring taught me is that when a student says &ldquo;I don&#39;t get it&rdquo;, they usually cannot say which step lost them. Finding that step is far more useful than explaining the whole thing again.</p><p>That is also why I became interested in EEG. If we could see whether comprehension is happening before a student can put it into words, the feedback loop of teaching would get a great deal shorter.</p></div>
       </div>
     </section>
   </main>
@@ -139,17 +157,15 @@
       <div class="site-footer__cols">
         <div>
           <p class="site-footer__label label">CONTACT</p>
-          <a class="site-footer__mail" href="mailto:ian@example.edu">ian [at] example.edu</a>
+          <a class="site-footer__mail" href="mailto:ian933024@gmail.com">ian933024 [at] gmail.com</a>
         </div>
-        <nav class="site-footer__links label" aria-label="外部連結">
-          <a href="https://orcid.org/0000-0000-0000-0000" rel="me noopener" target="_blank">ORCID</a>
-          <a href="https://scholar.google.com/" rel="me noopener" target="_blank">SCHOLAR</a>
-          <a href="https://github.com/" rel="me noopener" target="_blank">GITHUB</a>
+        <nav class="site-footer__links label" aria-label="Links">
+          <a href="https://github.com/ian933024" rel="me noopener" target="_blank">GITHUB</a>
         </nav>
       </div>
       <div class="site-footer__bottom caption">
-        <span>新竹 · 台灣</span>
-        <span class="mono-sm">最後更新 2026.09.21</span>
+        <span><span class="i18n-zh">新竹 · 台灣</span><span class="i18n-en">Hsinchu, Taiwan</span></span>
+        <span class="mono-sm"><span class="i18n-zh">最後更新 </span><span class="i18n-en">Updated </span>2026.09.21</span>
       </div>
     </div>
   </footer>

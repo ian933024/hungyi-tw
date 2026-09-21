@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html lang="zh-Hant-TW" class="no-js">
+<html lang="zh-Hant-TW" data-lang="zh" class="no-js"
+      data-title-zh="筆記 — 余竑毅" data-title-en="Notes — Hung-Yi Yu"
+      data-desc-zh="研究與教學過程中的筆記。" data-desc-en="Notes from research and teaching.">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>筆記 — Ian</title>
+  <title>筆記 — 余竑毅</title>
   <meta name="description" content="研究與教學過程中的筆記。">
   <meta name="robots" content="noindex, nofollow">
   <link rel="canonical" href="https://hungyi-tw.net/notes/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="筆記 — Ian">
+  <meta property="og:title" content="筆記 — 余竑毅">
   <meta property="og:description" content="研究與教學過程中的筆記。">
   <meta property="og:url" content="https://hungyi-tw.net/notes/">
   <meta property="og:locale" content="zh_TW">
+  <meta property="og:locale:alternate" content="en_US">
   <meta name="theme-color" content="#faf8f4" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151412" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -21,32 +24,37 @@
   <link rel="stylesheet" href="/assets/css/tokens.css">
   <link rel="stylesheet" href="/assets/css/site.css">
   <script>
-    /* 在畫面繪製前套用主題，避免切換時閃一下白底 */
+    /* 在畫面繪製前套用語言與主題，避免切換時閃一下 */
     (function () {
       var r = document.documentElement;
       r.classList.remove('no-js');
-      try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') r.setAttribute('data-theme', t); } catch (e) {}
-      /* 保險：site.js 若載入失敗，2 秒後仍把所有內容顯示出來 */
+      try {
+        var l = localStorage.getItem('lang');
+        if (l !== 'zh' && l !== 'en') l = /^zh/i.test(navigator.language || '') ? 'zh' : 'en';
+        r.setAttribute('data-lang', l);
+        r.setAttribute('lang', l === 'en' ? 'en' : 'zh-Hant-TW');
+        var t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') r.setAttribute('data-theme', t);
+      } catch (e) {}
       setTimeout(function () { r.classList.add('reveal-fallback'); }, 2000);
     })();
   </script>
 </head>
 <body>
-  <a class="skip-link body-sm" href="#main">跳到主要內容</a>
+  <a class="skip-link body-sm" href="#main"><span class="i18n-zh">跳到主要內容</span><span class="i18n-en">Skip to content</span></a>
   <header class="site-header">
     <div class="wrap wrap--wide">
       <div class="site-header__bar">
-        <a class="site-header__mark" href="/">Ian</a>
-        <nav class="site-nav label" aria-label="主要導覽">
-        <a href="/research/">RESEARCH</a>
-        <a href="/publications/">PUBLICATIONS</a>
-        <a href="/teaching/">TEACHING</a>
-        <a href="/dev/">DEV</a>
+        <a class="site-header__mark" href="/"><span class="i18n-zh">余竑毅</span><span class="i18n-en">Hung-Yi Yu</span></a>
+        <nav class="site-nav label" aria-label="Main">
+          <a href="/research/">RESEARCH</a>
+          <a href="/publications/">PUBLICATIONS</a>
+          <a href="/teaching/">TEACHING</a>
+          <a href="/dev/">DEV</a>
         </nav>
         <div class="site-header__aside label">
-        <a href="https://orcid.org/0000-0000-0000-0000" rel="me noopener" target="_blank">ORCID</a>
-        <a href="https://scholar.google.com/" rel="me noopener" target="_blank">SCHOLAR</a>
-        <a href="https://github.com/" rel="me noopener" target="_blank">GITHUB</a>
+          <a href="https://github.com/ian933024" rel="me noopener" target="_blank">GITHUB</a>
+          <button class="lang-toggle" type="button" data-lang-toggle data-lang-label="en">EN</button>
           <button class="theme-toggle" type="button" data-theme-toggle>DARK</button>
         </div>
       </div>
@@ -56,29 +64,28 @@
   <main id="main">
     <div class="wrap wrap--wide page-head">
       <p class="page-head__kicker label">NOTES</p>
-      <h1 class="page-head__title display-l">筆記</h1>
-      <p class="page-head__intro body">這一頁還沒開放。結構與樣式都已經備好，要開始寫的時候把下面註解掉的列表打開、並在 header 的導覽列加上一行即可。</p>
+      <h1 class="page-head__title display-l i18n-zh">筆記</h1><h1 class="page-head__title display-l i18n-en">Notes</h1>
+      <p class="page-head__intro body i18n-zh">這一頁還沒開放。結構與樣式都已經備好，要開始寫的時候把下面註解掉的列表打開、並在導覽列加上一行即可。</p><p class="page-head__intro body i18n-en">This page is not open yet. The structure and styles are ready; uncomment the list below and add a nav entry when you want to start writing.</p>
     </div>
     <section class="section wrap wrap--wide reveal">
       <div class="section__body">
-        <div class="prose body">
-          <p>目前沒有公開的文章。</p>
-        </div>
+        <div class="prose body i18n-zh"><p>目前沒有公開的文章。</p></div>
+        <div class="prose body i18n-en"><p>No public posts yet.</p></div>
 
         <!-- 開站步驟：
-             1. 把 build 時的 NAV 陣列（或各頁 header 區塊）加入 ("/notes/", "NOTES", "notes")
-             2. 移除本頁 head 裡的 noindex
+             1. tools/build_pages.py 的 NAV 陣列加入 ("/notes/", "NOTES", "notes")
+             2. 移除本頁 head() 呼叫裡的 noindex=True
              3. 把下面的列表取消註解，每篇文章建立 /notes/<slug>/index.html
-             4. sitemap.xml 加上新頁面
+             4. public/sitemap.xml 與 robots.txt 一併更新
         -->
         <!--
         <ul class="note-list">
-          <li class="note-list__item"><a href="/notes/grand-average/">
+          <li class="note-list__item"><a href="/notes/first-post/">
             <span class="note-list__head">
-              <span class="note-list__date mono-sm">2026.08</span>
-              <span class="note-list__title h3">為什麼我不再相信 grand average</span>
+              <span class="note-list__date mono-sm">2026.10</span>
+              <span class="note-list__title h3">文章標題</span>
             </span>
-            <p class="note-list__excerpt body-sm">平均化讓 ERP 好看，但也把個別差異抹掉了。記一次重新分析舊資料的過程。</p>
+            <p class="note-list__excerpt body-sm">一句話摘要。</p>
           </a></li>
         </ul>
         -->
@@ -91,17 +98,15 @@
       <div class="site-footer__cols">
         <div>
           <p class="site-footer__label label">CONTACT</p>
-          <a class="site-footer__mail" href="mailto:ian@example.edu">ian [at] example.edu</a>
+          <a class="site-footer__mail" href="mailto:ian933024@gmail.com">ian933024 [at] gmail.com</a>
         </div>
-        <nav class="site-footer__links label" aria-label="外部連結">
-          <a href="https://orcid.org/0000-0000-0000-0000" rel="me noopener" target="_blank">ORCID</a>
-          <a href="https://scholar.google.com/" rel="me noopener" target="_blank">SCHOLAR</a>
-          <a href="https://github.com/" rel="me noopener" target="_blank">GITHUB</a>
+        <nav class="site-footer__links label" aria-label="Links">
+          <a href="https://github.com/ian933024" rel="me noopener" target="_blank">GITHUB</a>
         </nav>
       </div>
       <div class="site-footer__bottom caption">
-        <span>新竹 · 台灣</span>
-        <span class="mono-sm">最後更新 2026.09.21</span>
+        <span><span class="i18n-zh">新竹 · 台灣</span><span class="i18n-en">Hsinchu, Taiwan</span></span>
+        <span class="mono-sm"><span class="i18n-zh">最後更新 </span><span class="i18n-en">Updated </span>2026.09.21</span>
       </div>
     </div>
   </footer>

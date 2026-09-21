@@ -72,12 +72,14 @@ img { max-width: 100%; height: auto; }
 }
 .site-header__aside { display: flex; gap: var(--space-4); align-items: baseline; flex: none; }
 .site-header__aside a,
-.theme-toggle {
+.theme-toggle,
+.lang-toggle {
   color: var(--ink-subtle); text-decoration: none;
   transition: color var(--dur-hover) ease-out;
 }
-.site-header__aside a:hover, .theme-toggle:hover { color: var(--accent-hover); }
-.theme-toggle {
+.site-header__aside a:hover, .theme-toggle:hover, .lang-toggle:hover { color: var(--accent-hover); }
+.theme-toggle,
+.lang-toggle {
   background: none; border: 0; padding: 0; cursor: pointer;
   font-family: var(--font-sans); font-size: 12px; line-height: 16px;
   font-weight: 500; letter-spacing: 0.08em;
@@ -321,7 +323,16 @@ a.pub-list__title:hover { color: var(--accent-hover); }
 
 /* ---------- 列印（CV 友善） ---------- */
 @media print {
-  .site-header, .site-footer, .theme-toggle, .skip-link { display: none; }
+  .site-header, .site-footer, .theme-toggle, .lang-toggle, .skip-link { display: none; }
   body { background: #fff; color: #000; }
   .wrap { max-width: none; padding: 0; }
 }
+
+/* ---------- 雙語切換 ----------
+   兩種語言都寫在 HTML 裡，靠 CSS 顯示其中一種。
+   好處：沒有 JS 也能讀（預設中文）、切換不閃爍、搜尋引擎兩種語言都抓得到。 */
+:root[data-lang="zh"] .i18n-en { display: none !important; }
+:root[data-lang="en"] .i18n-zh { display: none !important; }
+
+.lang-toggle { /* 與 theme-toggle 同一組樣式，見 .theme-toggle */ }
+.lang-toggle[data-lang-label="zh"] { letter-spacing: 0; } /* 中文不套用 label 的字距 */

@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html lang="zh-Hant-TW" class="no-js">
+<html lang="zh-Hant-TW" data-lang="zh" class="no-js"
+      data-title-zh="學術發表 — 余竑毅" data-title-en="Presentations — Hung-Yi Yu"
+      data-desc-zh="研討會發表與學術產出。" data-desc-en="Conference presentations and academic output.">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>論文 — Ian</title>
-  <meta name="description" content="期刊論文、研討會發表與撰寫中的稿件。">
+  <title>學術發表 — 余竑毅</title>
+  <meta name="description" content="研討會發表與學術產出。">
   <link rel="canonical" href="https://hungyi-tw.net/publications/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="論文 — Ian">
-  <meta property="og:description" content="期刊論文、研討會發表與撰寫中的稿件。">
+  <meta property="og:title" content="學術發表 — 余竑毅">
+  <meta property="og:description" content="研討會發表與學術產出。">
   <meta property="og:url" content="https://hungyi-tw.net/publications/">
   <meta property="og:locale" content="zh_TW">
+  <meta property="og:locale:alternate" content="en_US">
   <meta name="theme-color" content="#faf8f4" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151412" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -20,32 +23,37 @@
   <link rel="stylesheet" href="/assets/css/tokens.css">
   <link rel="stylesheet" href="/assets/css/site.css">
   <script>
-    /* 在畫面繪製前套用主題，避免切換時閃一下白底 */
+    /* 在畫面繪製前套用語言與主題，避免切換時閃一下 */
     (function () {
       var r = document.documentElement;
       r.classList.remove('no-js');
-      try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') r.setAttribute('data-theme', t); } catch (e) {}
-      /* 保險：site.js 若載入失敗，2 秒後仍把所有內容顯示出來 */
+      try {
+        var l = localStorage.getItem('lang');
+        if (l !== 'zh' && l !== 'en') l = /^zh/i.test(navigator.language || '') ? 'zh' : 'en';
+        r.setAttribute('data-lang', l);
+        r.setAttribute('lang', l === 'en' ? 'en' : 'zh-Hant-TW');
+        var t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') r.setAttribute('data-theme', t);
+      } catch (e) {}
       setTimeout(function () { r.classList.add('reveal-fallback'); }, 2000);
     })();
   </script>
 </head>
 <body>
-  <a class="skip-link body-sm" href="#main">跳到主要內容</a>
+  <a class="skip-link body-sm" href="#main"><span class="i18n-zh">跳到主要內容</span><span class="i18n-en">Skip to content</span></a>
   <header class="site-header">
     <div class="wrap wrap--wide">
       <div class="site-header__bar">
-        <a class="site-header__mark" href="/">Ian</a>
-        <nav class="site-nav label" aria-label="主要導覽">
-        <a href="/research/">RESEARCH</a>
-        <a href="/publications/" aria-current="page">PUBLICATIONS</a>
-        <a href="/teaching/">TEACHING</a>
-        <a href="/dev/">DEV</a>
+        <a class="site-header__mark" href="/"><span class="i18n-zh">余竑毅</span><span class="i18n-en">Hung-Yi Yu</span></a>
+        <nav class="site-nav label" aria-label="Main">
+          <a href="/research/">RESEARCH</a>
+          <a href="/publications/" aria-current="page">PUBLICATIONS</a>
+          <a href="/teaching/">TEACHING</a>
+          <a href="/dev/">DEV</a>
         </nav>
         <div class="site-header__aside label">
-        <a href="https://orcid.org/0000-0000-0000-0000" rel="me noopener" target="_blank">ORCID</a>
-        <a href="https://scholar.google.com/" rel="me noopener" target="_blank">SCHOLAR</a>
-        <a href="https://github.com/" rel="me noopener" target="_blank">GITHUB</a>
+          <a href="https://github.com/ian933024" rel="me noopener" target="_blank">GITHUB</a>
+          <button class="lang-toggle" type="button" data-lang-toggle data-lang-label="en">EN</button>
           <button class="theme-toggle" type="button" data-theme-toggle>DARK</button>
         </div>
       </div>
@@ -55,75 +63,22 @@
   <main id="main">
     <div class="wrap wrap--wide page-head">
       <p class="page-head__kicker label">PUBLICATIONS</p>
-      <h1 class="page-head__title display-l">論文</h1>
-      <p class="page-head__intro body">依年份由新到舊排列。可取得的稿件都附上 PDF 連結；資料與程式碼在倫理審查允許的範圍內公開。</p>
+      <h1 class="page-head__title display-l i18n-zh">學術發表</h1><h1 class="page-head__title display-l i18n-en">Presentations</h1>
+      <p class="page-head__intro body i18n-zh">依年份由新到舊排列。目前以研討會發表為主，期刊論文還在路上。</p><p class="page-head__intro body i18n-en">Listed newest first. Conference work for now; journal articles are still on the way.</p>
     </div>
-      <!-- TODO: 以下全部是佔位資料。請逐筆換成真實內容；沒有的連結請整個刪掉，不要留 # 的假連結 -->
-    <section class="section wrap wrap--wide reveal">
-      <p class="section__kicker label">JOURNAL</p>
-      <div class="section__row">
-        <h2 class="section__title h1">期刊論文</h2>
-      </div>
-      <div class="section__body">
-        <ol class="pub-list">
-          <li class="pub-list__item">
-            <span class="pub-list__year mono-sm">2026</span>
-            <div>
-              <a class="pub-list__title h3" href="#">Portable EEG N400 as a proxy measure of lexical proficiency in EFL learners</a>
-              <p class="pub-list__authors body-sm"><strong>Ian Chen</strong>, C.-H. Lin, &amp; J.-X. Zhuang</p>
-              <p class="pub-list__venue caption"><em>Journal of Neurolinguistics</em><span>·</span><a href="#">DOI</a><span>·</span><a href="#">PDF</a><span>·</span><a href="#">Data</a></p>
-            </div>
-          </li>
-          <li class="pub-list__item">
-            <span class="pub-list__year mono-sm">2025</span>
-            <div>
-              <a class="pub-list__title h3" href="#">運動員反應抑制作業中的 P300 振幅差異：一個跨項目的比較</a>
-              <p class="pub-list__authors body-sm"><strong>Ian Chen</strong> &amp; Y.-T. Hsu</p>
-              <p class="pub-list__venue caption"><em>中華心理學刊</em><span>·</span><a href="#">PDF</a></p>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </section>
     <section class="section wrap wrap--wide reveal">
       <p class="section__kicker label">CONFERENCE</p>
       <div class="section__row">
-        <h2 class="section__title h1">研討會發表</h2>
-      </div>
-      <div class="section__body">
-        <ol class="pub-list">
-          <li class="pub-list__item">
-            <span class="pub-list__year mono-sm">2025</span>
-            <div>
-              <a class="pub-list__title h3" href="#">An automatic artifact rejection pipeline for low-density mobile EEG</a>
-              <p class="pub-list__authors body-sm"><strong>Ian Chen</strong></p>
-              <p class="pub-list__venue caption"><em>Society for Neuroscience Annual Meeting, San Diego</em><span>·</span><a href="#">Poster</a></p>
-            </div>
-          </li>
-          <li class="pub-list__item">
-            <span class="pub-list__year mono-sm">2024</span>
-            <div>
-              <a class="pub-list__title h3" href="#">以腦波指標評估國小學童英語詞彙熟悉度的可行性</a>
-              <p class="pub-list__authors body-sm"><strong>Ian Chen</strong>, J.-X. Zhuang</p>
-              <p class="pub-list__venue caption"><em>台灣教育傳播暨科技學會年會，台北</em><span>·</span><a href="#">Slides</a></p>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </section>
-    <section class="section wrap wrap--wide reveal">
-      <p class="section__kicker label">IN PREPARATION</p>
-      <div class="section__row">
-        <h2 class="section__title h1">撰寫中</h2>
+        <h2 class="section__title h1 i18n-zh">研討會發表</h2><h2 class="section__title h1 i18n-en">Conference Presentations</h2>
       </div>
       <div class="section__body">
         <ol class="pub-list">
           <li class="pub-list__item">
             <span class="pub-list__year mono-sm">2026</span>
             <div>
-              <a class="pub-list__title h3" href="#">Single-trial classification of semantic violation detection in L2 readers</a>
-              <p class="pub-list__authors body-sm"><strong>Ian Chen</strong>, et al.</p>
-              <p class="pub-list__venue caption"><em>準備投稿中</em></p>
+              <p class="pub-list__title h3">Task-Invariant P300 Responses in Athletes During Mathematical Tasks</p>
+              <p class="pub-list__authors body-sm">Chia-Chi Hsu, <strong>Hung-Yi Yu</strong>, Hui-Yu Hsu, Tsu-Jen Ding, Chen-Yu Yao, &amp; Zai-Fu Yao</p>
+              <p class="pub-list__venue caption"><em><span class="i18n-zh">Psychonomic Society 2026 Annual Meeting</span><span class="i18n-en">Psychonomic Society 2026 Annual Meeting</span></em><span>·</span><span><span class="i18n-zh">海報發表（已接受）</span><span class="i18n-en">Poster, accepted</span></span></p>
             </div>
           </li>
         </ol>
@@ -136,17 +91,15 @@
       <div class="site-footer__cols">
         <div>
           <p class="site-footer__label label">CONTACT</p>
-          <a class="site-footer__mail" href="mailto:ian@example.edu">ian [at] example.edu</a>
+          <a class="site-footer__mail" href="mailto:ian933024@gmail.com">ian933024 [at] gmail.com</a>
         </div>
-        <nav class="site-footer__links label" aria-label="外部連結">
-          <a href="https://orcid.org/0000-0000-0000-0000" rel="me noopener" target="_blank">ORCID</a>
-          <a href="https://scholar.google.com/" rel="me noopener" target="_blank">SCHOLAR</a>
-          <a href="https://github.com/" rel="me noopener" target="_blank">GITHUB</a>
+        <nav class="site-footer__links label" aria-label="Links">
+          <a href="https://github.com/ian933024" rel="me noopener" target="_blank">GITHUB</a>
         </nav>
       </div>
       <div class="site-footer__bottom caption">
-        <span>新竹 · 台灣</span>
-        <span class="mono-sm">最後更新 2026.09.21</span>
+        <span><span class="i18n-zh">新竹 · 台灣</span><span class="i18n-en">Hsinchu, Taiwan</span></span>
+        <span class="mono-sm"><span class="i18n-zh">最後更新 </span><span class="i18n-en">Updated </span>2026.09.21</span>
       </div>
     </div>
   </footer>

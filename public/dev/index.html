@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html lang="zh-Hant-TW" class="no-js">
+<html lang="zh-Hant-TW" data-lang="zh" class="no-js"
+      data-title-zh="開發 — 余竑毅" data-title-en="Builds — Hung-Yi Yu"
+      data-desc-zh="自己寫來解決研究與教學問題的工具與網站。" data-desc-en="Tools and sites built to solve my own research and teaching problems.">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>開發 — Ian</title>
-  <meta name="description" content="自己寫來解決自己問題的工具、網站與服務。">
+  <title>開發 — 余竑毅</title>
+  <meta name="description" content="自己寫來解決研究與教學問題的工具與網站。">
   <link rel="canonical" href="https://hungyi-tw.net/dev/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="開發 — Ian">
-  <meta property="og:description" content="自己寫來解決自己問題的工具、網站與服務。">
+  <meta property="og:title" content="開發 — 余竑毅">
+  <meta property="og:description" content="自己寫來解決研究與教學問題的工具與網站。">
   <meta property="og:url" content="https://hungyi-tw.net/dev/">
   <meta property="og:locale" content="zh_TW">
+  <meta property="og:locale:alternate" content="en_US">
   <meta name="theme-color" content="#faf8f4" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151412" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -20,32 +23,37 @@
   <link rel="stylesheet" href="/assets/css/tokens.css">
   <link rel="stylesheet" href="/assets/css/site.css">
   <script>
-    /* 在畫面繪製前套用主題，避免切換時閃一下白底 */
+    /* 在畫面繪製前套用語言與主題，避免切換時閃一下 */
     (function () {
       var r = document.documentElement;
       r.classList.remove('no-js');
-      try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') r.setAttribute('data-theme', t); } catch (e) {}
-      /* 保險：site.js 若載入失敗，2 秒後仍把所有內容顯示出來 */
+      try {
+        var l = localStorage.getItem('lang');
+        if (l !== 'zh' && l !== 'en') l = /^zh/i.test(navigator.language || '') ? 'zh' : 'en';
+        r.setAttribute('data-lang', l);
+        r.setAttribute('lang', l === 'en' ? 'en' : 'zh-Hant-TW');
+        var t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') r.setAttribute('data-theme', t);
+      } catch (e) {}
       setTimeout(function () { r.classList.add('reveal-fallback'); }, 2000);
     })();
   </script>
 </head>
 <body>
-  <a class="skip-link body-sm" href="#main">跳到主要內容</a>
+  <a class="skip-link body-sm" href="#main"><span class="i18n-zh">跳到主要內容</span><span class="i18n-en">Skip to content</span></a>
   <header class="site-header">
     <div class="wrap wrap--wide">
       <div class="site-header__bar">
-        <a class="site-header__mark" href="/">Ian</a>
-        <nav class="site-nav label" aria-label="主要導覽">
-        <a href="/research/">RESEARCH</a>
-        <a href="/publications/">PUBLICATIONS</a>
-        <a href="/teaching/">TEACHING</a>
-        <a href="/dev/" aria-current="page">DEV</a>
+        <a class="site-header__mark" href="/"><span class="i18n-zh">余竑毅</span><span class="i18n-en">Hung-Yi Yu</span></a>
+        <nav class="site-nav label" aria-label="Main">
+          <a href="/research/">RESEARCH</a>
+          <a href="/publications/">PUBLICATIONS</a>
+          <a href="/teaching/">TEACHING</a>
+          <a href="/dev/" aria-current="page">DEV</a>
         </nav>
         <div class="site-header__aside label">
-        <a href="https://orcid.org/0000-0000-0000-0000" rel="me noopener" target="_blank">ORCID</a>
-        <a href="https://scholar.google.com/" rel="me noopener" target="_blank">SCHOLAR</a>
-        <a href="https://github.com/" rel="me noopener" target="_blank">GITHUB</a>
+          <a href="https://github.com/ian933024" rel="me noopener" target="_blank">GITHUB</a>
+          <button class="lang-toggle" type="button" data-lang-toggle data-lang-label="en">EN</button>
           <button class="theme-toggle" type="button" data-theme-toggle>DARK</button>
         </div>
       </div>
@@ -55,61 +63,43 @@
   <main id="main">
     <div class="wrap wrap--wide page-head">
       <p class="page-head__kicker label">DEV</p>
-      <h1 class="page-head__title display-l">開發</h1>
-      <p class="page-head__intro body">多半是為了解決自己研究或教學上的麻煩而寫的東西。做得起來的就留著，做不起來的也記在這裡。</p>
+      <h1 class="page-head__title display-l i18n-zh">開發</h1><h1 class="page-head__title display-l i18n-en">Builds</h1>
+      <p class="page-head__intro body i18n-zh">為了解決自己研究或教學上的麻煩而寫的東西。做得起來的就留著用。</p><p class="page-head__intro body i18n-en">Things I built to solve problems in my own research and teaching. The ones that worked, I kept using.</p>
     </div>
     <section class="section wrap wrap--wide reveal">
-      <p class="section__kicker label">TOOLS</p>
+      <p class="section__kicker label">PROJECTS</p>
       <div class="section__row">
-        <h2 class="section__title h1">工具</h2>
+        <h2 class="section__title h1 i18n-zh">專案</h2><h2 class="section__title h1 i18n-en">Projects</h2>
       </div>
       <div class="section__body">
-      <!-- TODO: 專案卡請換成你實際做過的東西；連結指向 repo 或線上版本 -->
         <div class="card-grid">
         <article class="card">
           <div class="card__top">
-            <h3 class="card__title h2"><a href="#">ERP Viewer</a></h3>
-            <span class="tag tag--accent">維護中</span>
+            <h3 class="card__title h2"><a href="https://foliowl.hungyi-tw.net"><span class="i18n-zh">foliowl</span><span class="i18n-en">foliowl</span></a></h3>
+            <span class="tag tag--accent"><span class="i18n-zh">維護中</span><span class="i18n-en">Maintained</span></span>
           </div>
-          <p class="card__desc body-sm">瀏覽器裡直接開 .set 檔看波形的小工具，不用開 MATLAB 就能快速確認一筆資料有沒有壞掉。</p>
-          <p class="card__stats mono-sm"><span>JavaScript</span><span>WebGL</span><span>2025–</span></p>
+          <p class="card__desc body-sm"><span class="i18n-zh">版本化的個人經歷庫與學術履歷產生器。每一筆經歷存成可版本控制的條目，再依不同用途組合成履歷。這個網站的內容就是從它匯出的。</span><span class="i18n-en">A versioned personal experience archive and academic CV builder. Every entry is stored as a version-controlled record, then assembled into CVs for different purposes. The content of this site was exported from it.</span></p>
+          <p class="card__stats mono-sm"><span><span class="i18n-zh">Cloudflare Workers</span><span class="i18n-en">Cloudflare Workers</span></span><span><span class="i18n-zh">foliowl.hungyi-tw.net</span><span class="i18n-en">foliowl.hungyi-tw.net</span></span><span><span class="i18n-zh">2026–</span><span class="i18n-en">2026–</span></span></p>
         </article>
         <article class="card">
           <div class="card__top">
-            <h3 class="card__title h2"><a href="#">營隊報名系統</a></h3>
+            <h3 class="card__title h2"><a href="https://github.com/ian933024/hungyi-tw"><span class="i18n-zh">這個網站</span><span class="i18n-en">This site</span></a></h3>
             
           </div>
-          <p class="card__desc body-sm">為腦科學營隊寫的報名與分組工具，取代了原本每年重做一次的 Google 表單流程。</p>
-          <p class="card__stats mono-sm"><span>Cloudflare</span><span>D1</span><span>2024</span></p>
-        </article>
-        <article class="card">
-          <div class="card__top">
-            <h3 class="card__title h2"><a href="#">EEG 批次前處理 CLI</a></h3>
-            <span class="tag tag--accent">維護中</span>
-          </div>
-          <p class="card__desc body-sm">把固定的前處理步驟包成一行指令，讓新進實驗室成員不必先學會整套 EEGLAB 的 GUI 操作。</p>
-          <p class="card__stats mono-sm"><span>Python</span><span>MNE</span><span>2025–</span></p>
-        </article>
-        <article class="card">
-          <div class="card__top">
-            <h3 class="card__title h2"><a href="#">這個網站</a></h3>
-            
-          </div>
-          <p class="card__desc body-sm">純 HTML/CSS，部署在 Cloudflare Pages。所有樣式來自一套自己寫的 design system。</p>
-          <p class="card__stats mono-sm"><span>HTML / CSS</span><span>Cloudflare</span><span>2026</span></p>
+          <p class="card__desc body-sm"><span class="i18n-zh">純 HTML 與 CSS，沒有框架也沒有建置步驟，部署在 Cloudflare Pages。所有顏色、字級與間距都來自一套自己寫的 design system。</span><span class="i18n-en">Plain HTML and CSS, no framework and no build step, deployed on Cloudflare Pages. Every colour, type size and spacing step comes from a design system I wrote for it.</span></p>
+          <p class="card__stats mono-sm"><span><span class="i18n-zh">HTML / CSS</span><span class="i18n-en">HTML / CSS</span></span><span><span class="i18n-zh">Cloudflare Pages</span><span class="i18n-en">Cloudflare Pages</span></span><span><span class="i18n-zh">2026</span><span class="i18n-en">2026</span></span></p>
         </article>
         </div>
       </div>
     </section>
     <section class="section wrap wrap--wide reveal">
-      <p class="section__kicker label">NOTES</p>
+      <p class="section__kicker label">WHY</p>
       <div class="section__row">
-        <h2 class="section__title h1">寫在這裡的原因</h2>
+        <h2 class="section__title h1 i18n-zh">寫在這裡的原因</h2><h2 class="section__title h1 i18n-en">Why These Are Here</h2>
       </div>
       <div class="section__body">
-        <div class="prose body">
-          <p>學術網站通常只放論文，但研究過程中真正花掉最多時間的往往是那些沒人會引用的工具。把它們寫出來，一方面是給未來的自己備忘，一方面是如果有人遇到同樣的問題，可以少走一段。</p>
-        </div>
+        <div class="prose body i18n-zh"><p>學術網站通常只放論文，但研究過程中真正花掉最多時間的，往往是那些沒有人會引用的工具。把它們寫出來，一方面是給未來的自己備忘，一方面是如果有人遇到同樣的問題，可以少走一段。</p></div>
+        <div class="prose body i18n-en"><p>Academic sites usually list only papers, but the things that eat the most time in research are often the tools nobody will ever cite. Writing them down is partly a note to my future self, and partly so that anyone hitting the same problem has a shorter path.</p></div>
       </div>
     </section>
   </main>
@@ -119,17 +109,15 @@
       <div class="site-footer__cols">
         <div>
           <p class="site-footer__label label">CONTACT</p>
-          <a class="site-footer__mail" href="mailto:ian@example.edu">ian [at] example.edu</a>
+          <a class="site-footer__mail" href="mailto:ian933024@gmail.com">ian933024 [at] gmail.com</a>
         </div>
-        <nav class="site-footer__links label" aria-label="外部連結">
-          <a href="https://orcid.org/0000-0000-0000-0000" rel="me noopener" target="_blank">ORCID</a>
-          <a href="https://scholar.google.com/" rel="me noopener" target="_blank">SCHOLAR</a>
-          <a href="https://github.com/" rel="me noopener" target="_blank">GITHUB</a>
+        <nav class="site-footer__links label" aria-label="Links">
+          <a href="https://github.com/ian933024" rel="me noopener" target="_blank">GITHUB</a>
         </nav>
       </div>
       <div class="site-footer__bottom caption">
-        <span>新竹 · 台灣</span>
-        <span class="mono-sm">最後更新 2026.09.21</span>
+        <span><span class="i18n-zh">新竹 · 台灣</span><span class="i18n-en">Hsinchu, Taiwan</span></span>
+        <span class="mono-sm"><span class="i18n-zh">最後更新 </span><span class="i18n-en">Updated </span>2026.09.21</span>
       </div>
     </div>
   </footer>

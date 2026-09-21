@@ -1,6 +1,6 @@
 # hungyi-tw.net
 
-Ian 的個人學術網站。純 HTML/CSS，沒有建置步驟，部署在 Cloudflare Pages。
+余竑毅的個人學術網站，中英雙語。純 HTML/CSS，沒有建置步驟，部署在 Cloudflare Pages。
 
 ## 目錄結構
 
@@ -16,7 +16,7 @@ Ian 的個人學術網站。純 HTML/CSS，沒有建置步驟，部署在 Cloudf
 │   ├── assets/
 │   │   ├── css/tokens.css  design system 的 token（顏色、字級、間距）
 │   │   ├── css/site.css    版面與元件
-│   │   └── js/site.js      主題切換與進場過場（非必要，關掉網站仍完整可讀）
+│   │   └── js/site.js      語言切換、主題切換、進場過場（非必要，關掉仍完整可讀）
 │   ├── _headers            安全標頭與快取規則
 │   ├── _redirects          轉址規則
 │   ├── robots.txt
@@ -30,7 +30,7 @@ Ian 的個人學術網站。純 HTML/CSS，沒有建置步驟，部署在 Cloudf
 ## 改內容
 
 直接編輯 `public/` 底下的 `.html` 檔即可，存檔後用瀏覽器打開就能看。
-全站搜尋 `TODO:` 可以找到所有需要換成真實資料的地方。
+共用區塊（導覽列、頁尾、信箱）改 `tools/build_pages.py` 後重新產生。
 
 改樣式一律改 `assets/css/tokens.css` 的變數，不要在 `site.css` 裡寫死顏色或尺寸——
 這樣深色主題才會跟著一起正確。

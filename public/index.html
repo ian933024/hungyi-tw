@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html lang="zh-Hant-TW" class="no-js">
+<html lang="zh-Hant-TW" data-lang="zh" class="no-js"
+      data-title-zh="余竑毅 — 腦科技與教育" data-title-en="Hung-Yi Yu — Brain Technology and Education"
+      data-desc-zh="陽明交通大學腦科技碩士生。腦波訊號的雜訊處理，以及四年的教育現場經驗。" data-desc-en="Master&#39;s student in brain technology at NYCU. EEG noise characterisation, and four years of hands-on teaching.">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ian — 認知神經科學與教育科技</title>
-  <meta name="description" content="我研究大腦如何處理語言。可攜式腦波儀、N400、以及能真的放進教室的英語能力評估工具。">
+  <title>余竑毅 — 腦科技與教育</title>
+  <meta name="description" content="陽明交通大學腦科技碩士生。腦波訊號的雜訊處理，以及四年的教育現場經驗。">
   <link rel="canonical" href="https://hungyi-tw.net/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Ian — 認知神經科學與教育科技">
-  <meta property="og:description" content="我研究大腦如何處理語言。可攜式腦波儀、N400、以及能真的放進教室的英語能力評估工具。">
+  <meta property="og:title" content="余竑毅 — 腦科技與教育">
+  <meta property="og:description" content="陽明交通大學腦科技碩士生。腦波訊號的雜訊處理，以及四年的教育現場經驗。">
   <meta property="og:url" content="https://hungyi-tw.net/">
   <meta property="og:locale" content="zh_TW">
+  <meta property="og:locale:alternate" content="en_US">
   <meta name="theme-color" content="#faf8f4" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151412" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -20,32 +23,37 @@
   <link rel="stylesheet" href="/assets/css/tokens.css">
   <link rel="stylesheet" href="/assets/css/site.css">
   <script>
-    /* 在畫面繪製前套用主題，避免切換時閃一下白底 */
+    /* 在畫面繪製前套用語言與主題，避免切換時閃一下 */
     (function () {
       var r = document.documentElement;
       r.classList.remove('no-js');
-      try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') r.setAttribute('data-theme', t); } catch (e) {}
-      /* 保險：site.js 若載入失敗，2 秒後仍把所有內容顯示出來 */
+      try {
+        var l = localStorage.getItem('lang');
+        if (l !== 'zh' && l !== 'en') l = /^zh/i.test(navigator.language || '') ? 'zh' : 'en';
+        r.setAttribute('data-lang', l);
+        r.setAttribute('lang', l === 'en' ? 'en' : 'zh-Hant-TW');
+        var t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') r.setAttribute('data-theme', t);
+      } catch (e) {}
       setTimeout(function () { r.classList.add('reveal-fallback'); }, 2000);
     })();
   </script>
 </head>
 <body>
-  <a class="skip-link body-sm" href="#main">跳到主要內容</a>
+  <a class="skip-link body-sm" href="#main"><span class="i18n-zh">跳到主要內容</span><span class="i18n-en">Skip to content</span></a>
   <header class="site-header">
     <div class="wrap wrap--wide">
       <div class="site-header__bar">
-        <a class="site-header__mark" href="/">Ian</a>
-        <nav class="site-nav label" aria-label="主要導覽">
-        <a href="/research/">RESEARCH</a>
-        <a href="/publications/">PUBLICATIONS</a>
-        <a href="/teaching/">TEACHING</a>
-        <a href="/dev/">DEV</a>
+        <a class="site-header__mark" href="/"><span class="i18n-zh">余竑毅</span><span class="i18n-en">Hung-Yi Yu</span></a>
+        <nav class="site-nav label" aria-label="Main">
+          <a href="/research/">RESEARCH</a>
+          <a href="/publications/">PUBLICATIONS</a>
+          <a href="/teaching/">TEACHING</a>
+          <a href="/dev/">DEV</a>
         </nav>
         <div class="site-header__aside label">
-        <a href="https://orcid.org/0000-0000-0000-0000" rel="me noopener" target="_blank">ORCID</a>
-        <a href="https://scholar.google.com/" rel="me noopener" target="_blank">SCHOLAR</a>
-        <a href="https://github.com/" rel="me noopener" target="_blank">GITHUB</a>
+          <a href="https://github.com/ian933024" rel="me noopener" target="_blank">GITHUB</a>
+          <button class="lang-toggle" type="button" data-lang-toggle data-lang-label="en">EN</button>
           <button class="theme-toggle" type="button" data-theme-toggle>DARK</button>
         </div>
       </div>
@@ -53,43 +61,54 @@
   </header>
 
   <main id="main">
-      <!-- TODO: 把 Hero 的姓名換成你希望對外顯示的名字（中文全名或 Ian） -->
     <div class="wrap wrap--wide hero">
-      <h1 class="hero__name display-xl">Ian</h1>
-      <p class="hero__lead lead">我研究大腦如何處理語言。目前用可攜式腦波儀量測 N400，試著把它變成真的能放進教室的英語能力評估工具。</p>
+      <h1 class="hero__name display-xl i18n-zh">余竑毅</h1><h1 class="hero__name display-xl i18n-en">Hung-Yi Yu</h1>
+      <p class="hero__lead lead i18n-zh">我在陽明交通大學讀腦科技，研究腦波訊號裡的雜訊該怎麼描述與分離。在那之前我念教育，也在教學現場待了四年——對我來說這是同一個問題的兩端。</p><p class="hero__lead lead i18n-en">I study brain technology at NYCU, working on how to describe and separate noise in EEG signals. Before that I studied education and spent four years teaching. To me these are two ends of the same question.</p>
       <p class="hero__meta caption">
         <span class="hero__dot" aria-hidden="true"></span>
-        <span>碩士生 · <a href="https://www.nycu.edu.tw/" target="_blank" rel="noopener">陽明交通大學 腦科技跨領域工程學程</a> · 新竹</span>
+        <span><span class="i18n-zh">碩士生 · 國立陽明交通大學 腦科技跨領域工程碩士學位學程 · 新竹</span><span class="i18n-en">MSc student · Interdisciplinary Program of Brain Technology Engineering, NYCU · Hsinchu, Taiwan</span></span>
       </p>
       <p class="hero__actions">
-        <a class="btn btn--primary" href="/cv.pdf">下載 CV</a>
-        <a class="btn btn--secondary" href="mailto:ian@example.edu">寄信給我</a>
+        <a class="btn btn--primary" href="mailto:ian933024@gmail.com"><span class="i18n-zh">寄信給我</span><span class="i18n-en">Email me</span></a>
       </p>
     </div>
 
     <section class="section wrap wrap--wide reveal">
-      <p class="section__kicker label">SELECTED WORK</p>
+      <p class="section__kicker label">ABOUT</p>
       <div class="section__row">
-        <h2 class="section__title h1">近期研究</h2>
-        <a class="section__more body-sm" href="/research/">全部研究 →</a>
+        <h2 class="section__title h1 i18n-zh">關於</h2><h2 class="section__title h1 i18n-en">About</h2>
+      </div>
+      <div class="section__body">
+        <div class="prose body i18n-zh"><p>我在清華大學念教育與學習科技，2026 年畢業後進入陽明交通大學電機學院的腦科技跨領域工程碩士學位學程，指導教授是柯立偉老師。目前在神經工程實驗室參與一個與工研院、鯨揚公司的產學合作計畫，負責蒐集腦波雜訊資料，並把它做成可參數化調整的雜訊訊號。</p><p>在那之前，我在清大許慧玉老師的實驗室當研究助理，每週固定到台大醫院新竹分院進行腦波收案，對象是阿茲海默症與帕金森氏症的長者，同時也負責訓練其他收案人員。大學期間拿過國科會大專學生研究計畫，題目是把編序教學法的概念用在大型語言模型的提示工程上。</p><p>教學方面，我在清大教育服務團辦過與參與過二十場以上營隊，長期在尖石國中與東園國小做課輔，也帶過國中與國小的家教。另外有兩次赴日本的教育見習，2025 年那次擔任總召。</p></div>
+        <div class="prose body i18n-en"><p>I studied Education and Learning Sciences at National Tsing Hua University, and since 2026 I have been in the Interdisciplinary Program of Brain Technology Engineering at National Yang Ming Chiao Tung University, advised by Prof. Li-Wei Ko. In the Neural Engineering Lab I work on an industry project with ITRI and a partner company, collecting EEG artifact data and turning it into parameterised noise signals.</p><p>Before that I was a research assistant in Prof. Hui-Yu Hsu&#39;s lab at NTHU, travelling weekly to NTUH Hsinchu Branch to collect EEG data from older adults with Alzheimer&#39;s and Parkinson&#39;s disease, and training other data collectors. As an undergraduate I held an NSTC Undergraduate Research Grant applying programmed-instruction principles to prompt engineering for large language models.</p><p>On the teaching side, I ran or took part in more than twenty camps with the NTHU Education Service Corps, tutored long-term at Jianshi Junior High and Dongyuan Elementary School, and taught private students at both levels. I have also joined two education practicum trips to Japan, serving as coordinator for the 2025 one.</p></div>
+        <p class="tag-row" style="margin-top: var(--space-6)">
+          <span class="tag"><span class="i18n-zh">英語 CEFR B2</span><span class="i18n-en">English CEFR B2</span></span><span class="tag"><span class="i18n-zh">日語 JLPT N3</span><span class="i18n-en">Japanese JLPT N3</span></span><span class="tag tag--highlight"><span class="i18n-zh">國科會大專生計畫</span><span class="i18n-en">NSTC Research Grant</span></span>
+        </p>
+      </div>
+    </section>
+    <section class="section wrap wrap--wide reveal">
+      <p class="section__kicker label">RESEARCH</p>
+      <div class="section__row">
+        <h2 class="section__title h1 i18n-zh">研究計畫</h2><h2 class="section__title h1 i18n-en">Research Projects</h2>
+        <a class="section__more body-sm" href="/research/"><span class="i18n-zh">研究全部 →</span><span class="i18n-en">All research →</span></a>
       </div>
       <div class="section__body">
         <div class="card-grid">
         <article class="card">
           <div class="card__top">
-            <h3 class="card__title h2"><a href="/research/">EEG 雜訊處理管線</a></h3>
-            <span class="tag tag--accent">進行中</span>
+            <h3 class="card__title h2"><span><span class="i18n-zh">腦波雜訊特徵萃取方法之開發</span><span class="i18n-en">EEG Artifact Feature Extraction</span></span></h3>
+            <span class="tag tag--accent"><span class="i18n-zh">進行中</span><span class="i18n-en">Ongoing</span></span>
           </div>
-          <p class="card__desc body-sm">為低通道可攜式裝置設計的自動去偽跡流程，把眼動與肌電從單次試驗中剝離，讓 N400 在教室環境也量得到。</p>
-          <p class="card__stats mono-sm"><span>MATLAB / EEGLAB</span><span>32 ch</span><span>2025–</span></p>
+          <p class="card__desc body-sm"><span class="i18n-zh">與工研院及鯨揚公司的產學合作計畫。蒐集各類腦波雜訊資料，並把它建成可參數化調整的雜訊模型，讓後續的去雜訊演算法有可控的測試素材。</span><span class="i18n-en">An industry project with ITRI and a partner company. We collect EEG artifact data and turn it into parameterised noise models, so that denoising algorithms have controllable material to be tested against.</span></p>
+          <p class="card__stats mono-sm"><span><span class="i18n-zh">陽明交大 神經工程實驗室</span><span class="i18n-en">NYCU Neural Engineering Lab</span></span><span><span class="i18n-zh">指導 柯立偉</span><span class="i18n-en">Advisor Li-Wei Ko</span></span><span><span class="i18n-zh">2026–</span><span class="i18n-en">2026–</span></span></p>
         </article>
         <article class="card">
           <div class="card__top">
-            <h3 class="card__title h2"><a href="/research/">N400 英語能力評估</a></h3>
-            <span class="tag tag--accent">進行中</span>
+            <h3 class="card__title h2"><span><span class="i18n-zh">使用編序教學法進行提示工程研究</span><span class="i18n-en">Programmed Instruction as Prompt Engineering</span></span></h3>
+            <span class="tag tag--accent"><span class="i18n-zh">已結案</span><span class="i18n-en">Completed</span></span>
           </div>
-          <p class="card__desc body-sm">用語義違例句作業誘發 N400，測試它與傳統紙筆英語測驗的相關性，目標是一個 15 分鐘的課堂版本。</p>
-          <p class="card__stats mono-sm"><span>ERP</span><span>EFL</span><span>2024–</span></p>
+          <p class="card__desc body-sm"><span class="i18n-zh">國科會大專學生研究計畫。把編序教學法拆解步驟、逐步提示的邏輯套用到大型語言模型的提示設計，研究結果投稿至清華大學教育創新研討會。</span><span class="i18n-en">An NSTC Undergraduate Research Grant. I applied the step-wise logic of programmed instruction to prompt design for large language models; the results were submitted to the NTHU Conference on Educational Innovation.</span></p>
+          <p class="card__stats mono-sm"><span><span class="i18n-zh">國科會大專生計畫</span><span class="i18n-en">NSTC Grant</span></span><span><span class="i18n-zh">指導 莊鈞翔</span><span class="i18n-en">Advisor Chun-Hsiang Chuang</span></span><span><span class="i18n-zh">2024–2025</span><span class="i18n-en">2024–2025</span></span></p>
         </article>
         </div>
       </div>
@@ -97,69 +116,47 @@
     <section class="section wrap wrap--wide reveal">
       <p class="section__kicker label">PUBLICATIONS</p>
       <div class="section__row">
-        <h2 class="section__title h1">精選論文</h2>
-        <a class="section__more body-sm" href="/publications/">全部論文 →</a>
+        <h2 class="section__title h1 i18n-zh">學術發表</h2><h2 class="section__title h1 i18n-en">Presentations</h2>
+        <a class="section__more body-sm" href="/publications/"><span class="i18n-zh">全部發表 →</span><span class="i18n-en">All presentations →</span></a>
       </div>
       <div class="section__body">
-      <!-- TODO: 以下三筆為佔位資料，請換成真實的題目、作者列、期刊與連結；沒有 DOI 就把該連結整個拿掉 -->
         <ol class="pub-list">
           <li class="pub-list__item">
             <span class="pub-list__year mono-sm">2026</span>
             <div>
-              <a class="pub-list__title h3" href="#">Portable EEG N400 as a proxy measure of lexical proficiency in EFL learners</a>
-              <p class="pub-list__authors body-sm"><strong>Ian Chen</strong>, C.-H. Lin, &amp; J.-X. Zhuang</p>
-              <p class="pub-list__venue caption"><em>Journal of Neurolinguistics</em><span>·</span><a href="#">DOI</a><span>·</span><a href="#">PDF</a></p>
-            </div>
-          </li>
-          <li class="pub-list__item">
-            <span class="pub-list__year mono-sm">2025</span>
-            <div>
-              <a class="pub-list__title h3" href="#">運動員反應抑制作業中的 P300 振幅差異：一個跨項目的比較</a>
-              <p class="pub-list__authors body-sm"><strong>Ian Chen</strong> &amp; Y.-T. Hsu</p>
-              <p class="pub-list__venue caption"><em>中華心理學刊</em><span>·</span><a href="#">PDF</a></p>
+              <p class="pub-list__title h3">Task-Invariant P300 Responses in Athletes During Mathematical Tasks</p>
+              <p class="pub-list__authors body-sm">Chia-Chi Hsu, <strong>Hung-Yi Yu</strong>, Hui-Yu Hsu, Tsu-Jen Ding, Chen-Yu Yao, &amp; Zai-Fu Yao</p>
+              <p class="pub-list__venue caption"><em><span class="i18n-zh">Psychonomic Society 2026 Annual Meeting</span><span class="i18n-en">Psychonomic Society 2026 Annual Meeting</span></em><span>·</span><span><span class="i18n-zh">海報發表（已接受）</span><span class="i18n-en">Poster, accepted</span></span></p>
             </div>
           </li>
         </ol>
       </div>
     </section>
     <section class="section wrap wrap--wide reveal">
-      <p class="section__kicker label">BUILDS</p>
+      <p class="section__kicker label">TEACHING</p>
       <div class="section__row">
-        <h2 class="section__title h1">開發</h2>
-        <a class="section__more body-sm" href="/dev/">全部專案 →</a>
+        <h2 class="section__title h1 i18n-zh">教學經驗</h2><h2 class="section__title h1 i18n-en">Teaching</h2>
+        <a class="section__more body-sm" href="/teaching/"><span class="i18n-zh">全部教學經驗 →</span><span class="i18n-en">All teaching →</span></a>
       </div>
       <div class="section__body">
-        <div class="card-grid">
-        <article class="card">
-          <div class="card__top">
-            <h3 class="card__title h2"><a href="/dev/">ERP Viewer</a></h3>
-            <span class="tag tag--accent">維護中</span>
-          </div>
-          <p class="card__desc body-sm">瀏覽器裡直接開 .set 檔看波形的小工具，不用開 MATLAB 就能快速確認一筆資料有沒有壞掉。</p>
-          <p class="card__stats mono-sm"><span>JavaScript</span><span>WebGL</span><span>2025–</span></p>
-        </article>
-        <article class="card">
-          <div class="card__top">
-            <h3 class="card__title h2"><a href="/dev/">營隊報名系統</a></h3>
-            
-          </div>
-          <p class="card__desc body-sm">為腦科學營隊寫的報名與分組工具，取代了原本每年重做一次的 Google 表單流程。</p>
-          <p class="card__stats mono-sm"><span>Cloudflare</span><span>D1</span><span>2024</span></p>
-        </article>
-        </div>
-      </div>
-    </section>
-    <section class="section wrap wrap--wide reveal">
-      <p class="section__kicker label">ABOUT</p>
-      <div class="section__row">
-        <h2 class="section__title h1">關於</h2>
-      </div>
-      <div class="section__body">
-      <!-- TODO: 這兩段請用你自己的話重寫，這是整個網站最需要「像你」的地方 -->
-        <div class="prose body">
-          <p>我在清華大學念教育與學習科技，現在在陽明交通大學的腦科技跨領域工程學程讀碩士。兩個背景加起來的結果是：我對「學習發生的時候大腦在做什麼」這件事有興趣，但更在意這些知識能不能變成教室裡真的用得上的東西。</p>
-          <p>大學時做過國科會大專生研究計畫，也在語言與腦科學的實驗室待過。教學方面，我設計過六梯國小腦科學營隊，總共帶過一百多個學生自己接電極、看見自己的腦波。做研究和做課程對我來說是同一件事的兩面。</p>
-        </div>
+        <ul class="entry-list">
+          <li class="entry-list__item">
+            <span class="entry-list__when mono-sm">2025–2026</span>
+            <div>
+              <h3 class="entry-list__title h3"><span class="i18n-zh">研究助理</span><span class="i18n-en">Research Assistant</span></h3>
+              <p class="entry-list__where caption"><span class="i18n-zh">國立清華大學 許慧玉教授實驗室 · 台大醫院新竹分院</span><span class="i18n-en">Prof. Hui-Yu Hsu&#39;s Lab, NTHU · NTUH Hsinchu Branch</span></p>
+              <p class="entry-list__desc body-sm"><span class="i18n-zh">負責腦波研究的收案與現場操作，熟悉無線乾式電極腦波帽，並對其他收案人員進行教學。</span><span class="i18n-en">Ran EEG data collection sessions, worked hands-on with wireless dry-electrode headsets, and trained other data collectors.</span></p>
+            </div>
+          </li>
+          <li class="entry-list__item">
+            <span class="entry-list__when mono-sm">2023–2024</span>
+            <div>
+              <h3 class="entry-list__title h3"><span class="i18n-zh">教育服務團 幹部</span><span class="i18n-en">Education Service Corps, Officer</span></h3>
+              <p class="entry-list__where caption"><span class="i18n-zh">國立清華大學</span><span class="i18n-en">National Tsing Hua University</span></p>
+              <p class="entry-list__desc body-sm"><span class="i18n-zh">舉辦及參加超過二十場營隊。</span><span class="i18n-en">Organised and joined more than twenty camps.</span></p>
+            </div>
+          </li>
+        </ul>
       </div>
     </section>
   </main>
@@ -169,17 +166,15 @@
       <div class="site-footer__cols">
         <div>
           <p class="site-footer__label label">CONTACT</p>
-          <a class="site-footer__mail" href="mailto:ian@example.edu">ian [at] example.edu</a>
+          <a class="site-footer__mail" href="mailto:ian933024@gmail.com">ian933024 [at] gmail.com</a>
         </div>
-        <nav class="site-footer__links label" aria-label="外部連結">
-          <a href="https://orcid.org/0000-0000-0000-0000" rel="me noopener" target="_blank">ORCID</a>
-          <a href="https://scholar.google.com/" rel="me noopener" target="_blank">SCHOLAR</a>
-          <a href="https://github.com/" rel="me noopener" target="_blank">GITHUB</a>
+        <nav class="site-footer__links label" aria-label="Links">
+          <a href="https://github.com/ian933024" rel="me noopener" target="_blank">GITHUB</a>
         </nav>
       </div>
       <div class="site-footer__bottom caption">
-        <span>新竹 · 台灣</span>
-        <span class="mono-sm">最後更新 2026.09.21</span>
+        <span><span class="i18n-zh">新竹 · 台灣</span><span class="i18n-en">Hsinchu, Taiwan</span></span>
+        <span class="mono-sm"><span class="i18n-zh">最後更新 </span><span class="i18n-en">Updated </span>2026.09.21</span>
       </div>
     </div>
   </footer>
