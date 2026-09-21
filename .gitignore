@@ -1,0 +1,17 @@
+# Cloudflare / Wrangler
+.wrangler/
+.dev.vars
+.env
+.env.*
+
+# 相依套件（目前用不到，之後若引入工具鏈會需要）
+node_modules/
+
+# 作業系統
+.DS_Store
+Thumbs.db
+
+# 編輯器
+.vscode/
+.idea/
+*.swp
