@@ -40,6 +40,18 @@
 > 改腳本再跑一次 `python3 tools/build_pages.py` 比手動改六個檔案安全。
 > 但這不是建置步驟：產出的 HTML 已經在 repo 裡，沒有 Python 也能正常部署。
 
+## 快取與資源版本
+
+`_headers` 給 `/assets/*` 一年期 `immutable` 快取，所以 CSS/JS 的網址必須隨內容改變，
+否則舊訪客的瀏覽器會永遠用快取裡的舊版。`tools/build_pages.py` 的 `asset()` 會自動
+在網址後面加上內容雜湊（`site.css?v=2f681da6`），改了檔案就會換一組。
+
+**因此改完 `assets/` 底下的 CSS 或 JS，一定要重新跑一次產生器**，否則使用者拿不到新版：
+
+```bash
+python3 tools/build_pages.py
+```
+
 ## 部署
 
 ### 方法一：直接上傳（現在就能用，不需要 GitHub）

@@ -8,7 +8,7 @@
 
 中英文兩種版本都寫進同一份 HTML，靠 CSS（:root[data-lang]）顯示其中一種。
 """
-import os, io
+import os, io, hashlib
 
 SITE = "https://hungyi-tw.net"
 UPDATED = "2026.09.21"
@@ -26,6 +26,18 @@ NAV = [
     ("/teaching/",     "TEACHING",     "teaching"),
     ("/dev/",          "DEV",          "dev"),
 ]
+
+def asset(path):
+    """把 /assets/... 加上內容雜湊當版本號。
+
+    _headers 給 /assets/* 一年期 immutable 快取，所以檔名（含查詢字串）必須隨內容改變，
+    否則舊訪客的瀏覽器會一直用快取裡的舊版 CSS/JS。雜湊由檔案內容算出，改了就會自動換，
+    不會有忘記手動 bump 版本的問題。"""
+    local = os.path.join("public", path.lstrip("/"))
+    with open(local, "rb") as f:
+        h = hashlib.md5(f.read()).hexdigest()[:8]
+    return path + "?v=" + h
+
 
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n'
          '  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
@@ -101,8 +113,8 @@ def head(title_zh, title_en, desc_zh, desc_en, canonical, noindex=False):
             '  <meta name="theme-color" content="#151412" media="(prefers-color-scheme: dark)">\n'
             '  <link rel="icon" href="/favicon.svg" type="image/svg+xml">\n'
             '  ' + FONTS + '\n'
-            '  <link rel="stylesheet" href="/assets/css/tokens.css">\n'
-            '  <link rel="stylesheet" href="/assets/css/site.css">\n'
+            '  <link rel="stylesheet" href="' + asset('/assets/css/tokens.css') + '">\n'
+            '  <link rel="stylesheet" href="' + asset('/assets/css/site.css') + '">\n'
             '  ' + BOOT + '\n'
             '</head>\n'
             '<body>\n'
@@ -151,7 +163,7 @@ FOOTER = ('  </main>\n\n'
           '      </div>\n'
           '    </div>\n'
           '  </footer>\n\n'
-          '  <script src="/assets/js/site.js" defer></script>\n'
+          '  <script src="' + asset('/assets/js/site.js') + '" defer></script>\n'
           '</body>\n'
           '</html>\n')
 
