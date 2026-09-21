@@ -97,11 +97,12 @@ img { max-width: 100%; height: auto; }
 .hero__lead { margin: var(--space-6) 0 0; max-width: var(--measure-prose); color: var(--ink); }
 .hero__meta {
   margin: var(--space-8) 0 0; color: var(--ink-subtle);
-  display: flex; align-items: center; gap: var(--space-2); flex-wrap: wrap;
 }
+/* 圓點用 inline-block 而非 flex item：文字換行時圓點會跟著第一行，
+   不會被擠成單獨一行。 */
 .hero__dot {
-  width: 6px; height: 6px; border-radius: var(--radius-pill);
-  background: var(--accent); flex: none;
+  display: inline-block; width: 6px; height: 6px; border-radius: var(--radius-pill);
+  background: var(--accent); margin-right: var(--space-2); vertical-align: middle;
 }
 .hero__meta a {
   color: var(--accent); text-decoration: underline; text-underline-offset: 3px;
